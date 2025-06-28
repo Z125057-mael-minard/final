@@ -1,3 +1,7 @@
+<?php
+    require('php_scripts/check_user.php');
+?>
+
 <!doctype html>
 <html lang="en">
 <head>

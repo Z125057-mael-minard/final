@@ -8,7 +8,7 @@ require('php_scripts/check_user.php');
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Product Detail</title>
+    <title>Shoopingcart</title>
 
     <?php
     require "rows/head.php";
@@ -19,7 +19,7 @@ require('php_scripts/check_user.php');
 <?php
 require "rows/header.php";
 
-require "rows/row-product_detail.php";
+require "rows/row-shopping_cart.php";
 
 require "rows/footer.php";
 ?>

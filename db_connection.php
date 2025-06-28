@@ -1,10 +1,11 @@
 <?php
-
+//localhost
 $dbname = 'e-commerce';
 $dbhost = 'localhost';
 $dbusername = 'root';
 $dbpassword = '';
 
+//live server
 /*
 $dbname = '';
 $dbhost = '';
