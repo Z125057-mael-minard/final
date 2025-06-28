@@ -33,7 +33,7 @@ if (isset($_SESSION["session_token"])) {
             $stmt->execute(array($current_session['user_id']));
             $selected_user = $stmt->fetch();
 
-            $is_admin = $selected_user['is_admin'];
+            $is_admin = $selected_user['user_is_admin'];
 
             $logged_in = true;
         }
