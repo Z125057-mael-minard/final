@@ -5,20 +5,22 @@
 
       <!-- Name input -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="text" id="form-name" class="form-control" name="name" />
-        <label class="form-label" for="form-name">Name</label>
+        <input type="text" id="form-name" class="form-control" name="name" placeholder="Name"/>
       </div>
 
       <!-- Email input -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="email" id="form-email" class="form-control" name="email" />
-        <label class="form-label" for="form-email">Email address</label>
+        <input type="email" id="form-email" class="form-control" name="email" placeholder="Email"/>
       </div>
 
       <!-- Password input -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="password" id="form-password" class="form-control" name="password" />
-        <label class="form-label" for="form-password">Password</label>
+        <input type="password" id="form-password" class="form-control" name="password" placeholder="Password"/>
+      </div>
+
+      <!-- Confirm Password input -->
+      <div data-mdb-input-init class="form-outline mb-4">
+        <input type="password" id="form-password-confirm" class="form-control" name="password_confirm" placeholder="Confirm password"/>
       </div>
 
       <!-- Submit button -->
@@ -26,8 +28,6 @@
     </form>
     <div id="register-error-text">
       <?php
-      session_start();
-
       if (isset($_SESSION['register_error'])) {
         echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['register_error']) . '</div>';
         unset($_SESSION['register_error']);
@@ -37,7 +37,6 @@
 
       <!-- Register buttons -->
       <div class="text-center">
-        <!-- TODO -->
         <p>Already have an account? <a href="login.php">Login</a></p>
       </div>
   </div>
