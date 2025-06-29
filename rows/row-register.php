@@ -37,7 +37,6 @@
 
       <!-- Register buttons -->
       <div class="text-center">
-        <!-- TODO -->
         <p>Already have an account? <a href="login.php">Login</a></p>
       </div>
   </div>

@@ -4,14 +4,12 @@
     <form action="php_scripts/login_user.php" method="post">
       <!-- Email input -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="email" id="form-email" class="form-control" name="email" />
-        <label class="form-label" for="form-email">Email address</label>
+        <input type="email" id="form-email" class="form-control" name="email" placeholder="Email"/>
       </div>
 
       <!-- Password input -->
       <div data-mdb-input-init class="form-outline mb-4">
-        <input type="password" id="form-password" class="form-control" name="password" />
-        <label class="form-label" for="form-password">Password</label>
+          <input type="password" id="form-password" class="form-control" name="password" placeholder="Password"/>
       </div>
 
       <!-- Submit button -->
@@ -30,7 +28,6 @@
 
       <!-- Register buttons -->
       <div class="text-center">
-        <!-- TODO -->
         <p>Don't have an account? <a href="register.php">Register</a></p>
       </div>
   </div>
