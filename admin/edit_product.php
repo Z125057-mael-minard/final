@@ -1,5 +1,5 @@
 <?php
-
+require __DIR__ . '/../php_scripts/check_admin.php';
 ?>
 
 <!doctype html>
@@ -18,11 +18,16 @@
 </head>
 <body>
 <?php
+if ($admin == 1){
 require "rows/header.php";
 
 require "rows/row-edit_product.php";
 
 require "rows/footer.php";
+}
+else{
+  echo 'You are not allowed to view this page.';
+}
 ?>
 </body>
 </html>

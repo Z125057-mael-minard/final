@@ -10,8 +10,8 @@
       $stmt = $db->prepare("SELECT * FROM users WHERE user_id = ?");
       $stmt->execute(array($current_session['user_id']));
       $user = $stmt->fetch();
-      echo '<div class="user-account-info">User name: ' . $user['user_name'] . '</div>';
-      echo '<div class="user-account-info">User email: ' . $user['user_email'] . '</div>';
+      echo '<div class="user-account-info">User name: ' . htmlspecialchars($user['user_name']) . '</div>';
+      echo '<div class="user-account-info">User email: ' . htmlspecialchars($user['user_email']) . '</div>';
     }
     else{
       echo '<div class="alert alert-danger">Not logged in</div>';
