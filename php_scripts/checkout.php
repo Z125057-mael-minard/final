@@ -56,4 +56,4 @@ foreach ($shoppingCart_products as $productId => $amount):{
     $stmt->execute($data);
 };endforeach;
 
-header('location: ../index.php');
+header('location: ../thankyou.php?name=' . $shipping_name . '&orderId=' . $order_id->order_id);

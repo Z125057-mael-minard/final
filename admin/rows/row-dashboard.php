@@ -1,10 +1,8 @@
 <?php
 require "../db_connection.php";
 
-$sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id";
+$sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id ORDER BY prod.product_id DESC";
 $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
-
-
 ?>
 
 <div class="container">
