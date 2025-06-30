@@ -15,10 +15,12 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 // This variable holds the success of the login
-$logged = false;
+$loggedIn = false;
+
+$header = 'location: ../index.php';
 
 
-// If the user is already logged in dont allow login
+// If the user is already logged in don't allow login
 if (!$_SESSION['logged_in']){
   // Get the user for this email
   $stmt = $db->prepare("SELECT * FROM users WHERE user_email = ?");
@@ -27,7 +29,10 @@ if (!$_SESSION['logged_in']){
   // Login check
   if ($user){
     if (password_verify($password, $user['user_password'])){
-      $logged = true;
+      $loggedIn = true;
+      if($user['user_is_admin'] == 1){
+          $header = 'location: ../admin/dashboard.php';
+      }
     }
     else{
       $_SESSION['login_error'] = 'Incorrect password.';
@@ -42,7 +47,7 @@ else{
 }
 
 // Redirect to index on successful login and to login page on failure
-if ($logged) {
+if ($loggedIn) {
   // Verify if there is already a session for that user
   $stmt = $db->prepare("SELECT * FROM sessions WHERE user_id = ?");
   $stmt->execute(array($user['user_id']));
@@ -59,7 +64,7 @@ if ($logged) {
     $stmt->execute(array($session_token, $user_id, $host_name, $end_time));
     $_SESSION["session_token"] = $session_token;
   }
-  header('location: ../index.php');
+  header($header);
 }
 else{
   header('location: ../login.php');

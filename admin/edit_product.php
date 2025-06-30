@@ -19,11 +19,11 @@ require __DIR__ . '/../php_scripts/check_admin.php';
 <body>
 <?php
 if ($admin == 1){
-require "rows/header.php";
+    require "rows/header.php";
 
-require "rows/row-edit_product.php";
+    require "rows/row-edit_product.php";
 
-require "rows/footer.php";
+    require "rows/footer.php";
 }
 else{
   echo 'You are not allowed to view this page.';

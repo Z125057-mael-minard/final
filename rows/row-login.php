@@ -17,7 +17,6 @@
     </form>
     <div id="login-error-text">
       <?php
-      session_start();
 
       if (isset($_SESSION['login_error'])) {
         echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['login_error']) . '</div>';

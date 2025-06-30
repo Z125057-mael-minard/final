@@ -1,6 +1,8 @@
 <?php
 require('db_connection.php');
 $products = $_SESSION['shopping_cart'];
+
+$total_price = 0;
 ?>
 
 <div class="container">
@@ -23,6 +25,8 @@ $products = $_SESSION['shopping_cart'];
             <?php
             $sql = "SELECT * FROM products  WHERE product_id = '$productId'";
             $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
+
+            $total_price += $amount * $product -> product_price;
             ?>
             <div class="row">
                 <div class="col-2">
@@ -42,6 +46,10 @@ $products = $_SESSION['shopping_cart'];
                 </div>
             </div>
         <?php endforeach;?>
+        <div class="row">
+            <p>Total price: <?php echo($total_price) ?></p>
+            <a href="checkout.php">Checkout</a>
+        </div>
     </div>
 </div>
 
