@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'db_connection.php';
+require __DIR__ . '/../db_connection.php';
 
 $logged_in = false;
 $is_admin = false;
