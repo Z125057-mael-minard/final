@@ -18,7 +18,7 @@ require __DIR__ . '/../php_scripts/check_user.php';
 </head>
 <body>
 <?php
-if ($is_admin == true){
+if ($is_admin == 1){
   require "rows/header.php";
   
   require "rows/row-dashboard.php";

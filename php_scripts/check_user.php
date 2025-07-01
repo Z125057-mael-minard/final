@@ -6,6 +6,8 @@ require __DIR__ . '/../db_connection.php';
 $logged_in = false;
 $is_admin = false;
 
+echo($_SESSION["session_token"]);
+
 // CHECK SESSION
 if (isset($_SESSION["session_token"])) {
     $stmt = $db->prepare("SELECT * FROM sessions WHERE session_token = ?");
@@ -27,11 +29,13 @@ if (isset($_SESSION["session_token"])) {
             session_destroy();
 
             $logged_in = false;
+
         }
         else {
             $stmt = $db->prepare("SELECT * FROM users WHERE user_id = ?");
             $stmt->execute(array($current_session['user_id']));
             $selected_user = $stmt->fetch();
+
 
             $is_admin = $selected_user['user_is_admin'];
 

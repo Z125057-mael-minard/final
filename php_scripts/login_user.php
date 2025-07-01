@@ -19,7 +19,6 @@ $loggedIn = false;
 
 $header = 'location: ../index.php';
 
-
 // If the user is already logged in don't allow login
 if (!$_SESSION['logged_in']){
   // Get the user for this email
