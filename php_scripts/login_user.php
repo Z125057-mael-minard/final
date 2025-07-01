@@ -47,10 +47,12 @@ else{
 
 // Redirect to index on successful login and to login page on failure
 if ($loggedIn) {
+
   // Verify if there is already a session for that user
   $stmt = $db->prepare("SELECT * FROM sessions WHERE user_id = ?");
   $stmt->execute(array($user['user_id']));
   $current_session = $stmt->fetch();
+
   // If not then create one
   if ($current_session == null){
     $session_token = hash('sha256', bin2hex(random_bytes(12)));
@@ -62,6 +64,9 @@ if ($loggedIn) {
     $stmt = $db->prepare("INSERT INTO sessions (session_token, user_id, host_name, end_time) VALUES (?, ?, ?, ?)");
     $stmt->execute(array($session_token, $user_id, $host_name, $end_time));
     $_SESSION["session_token"] = $session_token;
+  }
+  else {
+      $_SESSION["session_token"] = $current_session["session_token"];
   }
   header($header);
 }

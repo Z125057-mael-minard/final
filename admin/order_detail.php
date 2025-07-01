@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../php_scripts/check_admin.php';
+require __DIR__ . '/../php_scripts/check_user.php';
 ?>
 
 <!doctype html>
@@ -18,7 +18,7 @@ require __DIR__ . '/../php_scripts/check_admin.php';
 </head>
 <body>
 <?php
-if ($admin == 1){
+if ($is_admin == 1){
     require "rows/header.php";
 
     require "rows/row-order_detail.php";

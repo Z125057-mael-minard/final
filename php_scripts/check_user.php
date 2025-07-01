@@ -6,8 +6,6 @@ require __DIR__ . '/../db_connection.php';
 $logged_in = false;
 $is_admin = false;
 
-echo($_SESSION["session_token"]);
-
 // CHECK SESSION
 if (isset($_SESSION["session_token"])) {
     $stmt = $db->prepare("SELECT * FROM sessions WHERE session_token = ?");
