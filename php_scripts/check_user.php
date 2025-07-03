@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 session_start();
 
 require __DIR__ . '/../db_connection.php';
@@ -22,8 +25,8 @@ if (isset($_SESSION["session_token"])) {
 
         if($current_time >= $end_time || $current_session['host_name'] != gethostname()){
             $session_token = $_SESSION["session_token"];
-            $sql = "DELETE FROM sessions WHERE session_token = $session_token";
-            $db->query($sql);
+            $stmt = $db->prepare("DELETE FROM sessions WHERE session_token = ?");
+            $stmt->execute(array($_SESSION["session_token"]));
             session_destroy();
 
             $logged_in = false;
