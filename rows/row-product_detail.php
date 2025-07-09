@@ -9,7 +9,13 @@ $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
 <div class="container">
     <div class="container-fluid">
         <div class="row product_detail-container">
-            <div class="col-lg-5 col-sm-12">
+            <div class="col-lg-6 col-sm-12">
+                <div class="product_detail-container-item">
+                    <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-sm-12">
                 <div class="product_detail-container-item">
                     <p class="product_detail-container-item-name"><?php echo($product->product_name) ?></p>
                     <p class="product_detail-container-item-category"><?php echo($product->category_name) ?></p>
@@ -25,6 +31,7 @@ $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
                     </form>
                 </div>
             </div>
+
 
 
             <div class="add_car-image col-lg-5 col-sm-12">

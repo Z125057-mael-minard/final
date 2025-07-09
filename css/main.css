@@ -1,0 +1,214 @@
+/*
+HEADER
+ */
+.header_container
+{
+    margin-bottom: 100px;
+    padding: 20px 0;
+    font-size: 25px;
+    font-family: Roboto, sans-serif;
+    font-weight: bolder;
+}
+.header_container a
+{
+    color: black;
+    transition: 0.1s;
+}
+.header_container a:hover
+{
+    transform: translateY(5px);
+}
+
+/*
+PRODUCTS
+ */
+a
+{
+    text-decoration: none;
+}
+
+.product_container
+{
+    border-radius: 3%;
+    box-shadow: 2px 0 7px gray;
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: 0.1s;
+}
+.product_container:hover
+{
+    transform: scale(105%);
+}
+
+.product_container-image
+{
+    height: 200px;
+}
+.product_container-image img
+{
+    width: 100%;
+    border-radius: 5%;
+    border-width: 2px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.product_container-model_name
+{
+    height: 100px;
+    font-family: "Cascadia Code", sans-serif;
+    font-size: 25px;
+    color: black;
+}
+
+.product_container-category
+{
+    border-style: none none solid none;
+    border-width: 2px;
+    height: 20px;
+    font-family: "Rockwell", sans-serif;
+    font-size: 15px;
+    color: gray;
+}
+
+.product_container-price
+{
+    height: 50px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
+}
+
+/*
+PRODUCT DETAIL
+ */
+.product_detail-container-item img
+{
+    width: 100%;
+    border-radius: 15px;
+}
+.product_detail-container-item-name
+{
+    font-family: "Cascadia Code", sans-serif;
+    font-weight: bolder;
+    font-size: 50px;
+    color: black;
+    margin-bottom: 0;
+}
+.product_detail-container-item-category
+{
+    border-style: none none solid none;
+    border-width: 2px;
+    font-family: "Rockwell", sans-serif;
+    font-size: 20px;
+    color: gray;
+}
+.product_detail-container-item-price
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    color: black;
+    margin-bottom: 150px;
+}
+.product_detail-container-item-stock
+{
+    font-family: "Rockwell", sans-serif;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 0;
+}
+
+.product_detail-container-add_to_cart
+{
+
+}
+
+.product_detail-container
+{
+
+}
+
+/*
+ADMIN
+ */
+
+/*
+DASHBOARD
+ */
+.dashboard_row
+{
+    height: 90px;
+    box-shadow: 2px 0 7px gray;
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: black;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0;
+    padding: 5px;
+}
+.dashboard_row_1line
+{
+    justify-content: space-evenly;
+}
+.admin_product_container-product_name
+{
+    font-family: "Cascadia Code", sans-serif;
+    font-size: 20px;
+    border-width: 0 0 2px 0;
+    border-style: solid;
+    border-color: #bfbfbf;
+}
+.admin_product_container-category
+{
+    font-family: "Rockwell", sans-serif;
+    font-weight: bolder;
+}
+.admin_product_container-price
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+.admin_product_container-stock
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+.admin_product_container-edit
+{
+    font-weight: bolder;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #bfbfbf;
+    padding: 5px 25px;
+    margin: 3px 0;
+    color: white;
+    background-color: #c3e2ff;
+}
+.admin_product_container-remove
+{
+    font-weight: bolder;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #bfbfbf;
+    padding: 5px 25px;
+    margin: 3px 5px;
+    color: white;
+    background-color: #ffb1b1;
+}
+.edited
+{
+    background-color: #e1e1e1;
+}
+p
+{
+    margin: 0;
+}
+.full-width
+{
+    width: 100%;
+}
+.footer
+{
+    margin-top: 100px;
+}

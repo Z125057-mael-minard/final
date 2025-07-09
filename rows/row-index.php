@@ -14,12 +14,12 @@ require "db_connection.php";
                     <div class="product_container d-block position-relative">
                         <a href="product.php?product_id=<?php echo($product->product_id)?>">
                             <div class="product_container-image">
-                                <img src="imgs/<?php echo($product->product_image_path)?>.jpg" alt="">
+                                <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
                             </div>
                             <div class="d-block">
                                 <p class="product_container-model_name"><?php echo($product->product_name)?></p>
                                 <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
-                                <p class="product_container-price">&euro; <?php echo($product->product_price); ?></p>
+                                <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
                             </div>
                         </a>
                     </div>
