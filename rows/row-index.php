@@ -23,18 +23,19 @@ if($product_name != "" || $product_category != "" || $price_asc_desc != ""){
     $filter_price_asc_desc = "";
 
     if ($product_name != ""){
-        $filter_product_name = "AND product_name LIKE '%$product_name%'";
+        $filter_product_name = "AND product_name LIKE '%".$product_name."%'";
     }
 
     if ($product_category != ""){
-        $filter_product_category = "AND category_id = '$product_category'";
+        $filter_product_category = "AND prod.category_id = $product_category";
     }
 
     if ($price_asc_desc == "ASC" || $price_asc_desc == "DESC"){
-        $filter_price_asc_desc = $price_asc_desc;
+        $filter_price_asc_desc = "ORDER BY product_price " . $price_asc_desc;
     }
 
-    $sql = $baseQuery . $filter_product_name . $filter_product_category . $filter_price_asc_desc;
+    $sql = $baseQuery . " " . $filter_product_name . " " . $filter_product_category . " " . $filter_price_asc_desc;
+
     $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 }
 else {
@@ -50,19 +51,21 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <div class="container">
     <div class="container-fluid">
         <div class="home_filter-container d-flex justify-content-evenly mb-4">
-            <input type="text">
-            <select name="" id="">
-                <?php foreach ($categories as $category): ?>
-                    <option value="<?php echo($category->category_id) ?>"><?php echo($category->category_name) ?></option>
-                <?php endforeach; ?>
-            </select>
-            <select name="" id="">
-                <option value="">No order</option>
-                <option value="ASC">Asc</option>
-                <option value="DESC">Desc</option>
-            </select>
-            <button style="margin-right: 10px;" type="submit" class="filter_button"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button onclick="clearFilter()" class="filter_button"><i class="fa-regular fa-circle-xmark"></i></button>
+            <form type="GET" enctype="multipart/form-data">
+                <input name="product_name" type="text">
+                <select name="product_category" id="">
+                    <?php foreach ($categories as $category): ?>
+                        <option value="<?php echo($category->category_id) ?>"><?php echo($category->category_name) ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <select name="price_asc_desc" id="">
+                    <option value="">No order</option>
+                    <option value="ASC">Asc</option>
+                    <option value="DESC">Desc</option>
+                </select>
+                <button style="margin-right: 10px;" type="submit" class="filter_button">Search</button>
+                <button onclick="clearFilter()" class="filter_button">Reset</button>
+            </form>
         </div>
     </div>
 </div>
