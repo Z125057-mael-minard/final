@@ -52,19 +52,20 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
     <div class="container-fluid">
         <div class="home_filter-container d-flex justify-content-evenly mb-4">
             <form type="GET" enctype="multipart/form-data">
-                <input name="product_name" type="text">
+                <input name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
                 <select name="product_category" id="">
+                    <option value="">Select category</option>
                     <?php foreach ($categories as $category): ?>
-                        <option value="<?php echo($category->category_id) ?>"><?php echo($category->category_name) ?></option>
+                        <option value="<?php echo($category->category_id) ?>" <?php if(isset($_GET['product_category']) && $category->category_id == $_GET['product_category']){echo('selected');} ?>><?php echo($category->category_name) ?></option>
                     <?php endforeach; ?>
                 </select>
                 <select name="price_asc_desc" id="">
                     <option value="">No order</option>
-                    <option value="ASC">Asc</option>
-                    <option value="DESC">Desc</option>
+                    <option value="ASC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "ASC"){echo('selected');} ?>>Asc</option>
+                    <option value="DESC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "DESC"){echo('selected');} ?>>Desc</option>
                 </select>
                 <button style="margin-right: 10px;" type="submit" class="filter_button">Search</button>
-                <button onclick="clearFilter()" class="filter_button">Reset</button>
+                <button onclick="clearFilter()" class="filter_button">Clear filter</button>
             </form>
         </div>
     </div>
