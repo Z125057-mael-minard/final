@@ -1,7 +1,9 @@
 <?php
 include("../db_connection.php");
 
-$sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id";
+$product_id = $_GET['product_id'];
+
+$sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id WHERE product_id = '$product_id'";
 $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
 
 $sql = "SELECT * FROM categories";
