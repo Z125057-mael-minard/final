@@ -21,3 +21,5 @@ require('php_scripts/check_user.php');
 ?>
 </body>
 </html>
+
+<script src="javascript/background_styling.js"></script>

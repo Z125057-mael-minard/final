@@ -25,3 +25,5 @@ require "rows/footer.php";
 ?>
 </body>
 </html>
+
+<script src="javascript/background_styling.js"></script>
