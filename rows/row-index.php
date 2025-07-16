@@ -50,22 +50,22 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
     <div class="container-fluid">
-        <div class="home_filter-container d-flex justify-content-evenly mb-4">
+        <div id="filter-container" class="home_filter-container d-flex justify-content-evenly mb-4">
             <form type="GET" enctype="multipart/form-data">
-                <input name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
-                <select name="product_category" id="">
+                <input class="filter_product_name filter_product" name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
+                <select class="filter_product_category filter_product" name="product_category" id="">
                     <option value="">Select category</option>
                     <?php foreach ($categories as $category): ?>
                         <option value="<?php echo($category->category_id) ?>" <?php if(isset($_GET['product_category']) && $category->category_id == $_GET['product_category']){echo('selected');} ?>><?php echo($category->category_name) ?></option>
                     <?php endforeach; ?>
                 </select>
-                <select name="price_asc_desc" id="">
+                <select class="filter_product_order filter_product" name="price_asc_desc" id="">
                     <option value="">No order</option>
                     <option value="ASC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "ASC"){echo('selected');} ?>>Asc</option>
                     <option value="DESC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "DESC"){echo('selected');} ?>>Desc</option>
                 </select>
-                <button style="margin-right: 10px;" type="submit" class="filter_button">Search</button>
-                <button onclick="clearFilter()" class="filter_button">Clear filter</button>
+                <button style="margin-right: 10px;" type="submit" class="filter_button filter_button_search filter_product">Search</button>
+                <button onclick="clearFilter()" class="filter_button filter_button_clear filter_product">Clear filter</button>
             </form>
         </div>
     </div>

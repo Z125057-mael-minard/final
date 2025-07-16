@@ -7,7 +7,10 @@
 }
 
 @media only screen and (max-width: 991px) {
-
+.filter_button
+{
+    width: 125px;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -15,9 +18,46 @@
 }
 
 @media only screen and (max-width: 575px) {
-.icon_cart
-{
-    font-size: 0;
-    background-image: url("imgs/icons/shopping-cart.png");
+    .filter_product_name
+    {
+        width: 100%;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
+    .filter_product_category
+    {
+        width: 100%;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
+    .filter_product_order
+    {
+        width: 100%;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
+    .filter_button
+    {
+        width: 47%;
+        margin: 10px 0;
+    }
+    .filter_button_search
+    {
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .filter_button_clear
+    {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
+
+@media only screen and (max-width: 320px) {
+    .filter_button
+    {
+        width: 60%;
+        border-radius: 25px;
+        margin: 10px 0;
+    }
 }

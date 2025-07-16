@@ -3,8 +3,11 @@ let screen_width = window.innerWidth;
 let season = getSeason(new Date());
 season = "imgs/Fall_blur.png";
 let header = document.getElementById("header");
+let filter = document.getElementById("filter-container");
 header.style.backgroundImage = "url('" + season + "')";
 header.style.backgroundSize = screen_width + "px";
+filter.style.backgroundImage = "url('" + season + "')";
+filter.style.backgroundSize = screen_width + "px";
 
 function getSeason(date)
 {
@@ -37,7 +40,7 @@ function set_disks()
         disk = document.getElementById("disk-" + i);
         size = Math.floor(Math.random() * screen_width * 0.5 + 200);
         x = Math.floor(Math.random() * screen_width -(size*0.5));
-        y = Math.floor(Math.random() * screen_height -(size*0.75));
+        y = Math.floor(Math.random() * (screen_height-1000) -(size*0.75)) + 1000;
         disk.style.top = y + "px";
         disk.style.left = x + "px";
         disk.style.width = size + "px";

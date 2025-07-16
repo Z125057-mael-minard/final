@@ -37,6 +37,56 @@ HEADER
 }
 
 /*
+FILTER SEARCH
+ */
+.home_filter-container
+{
+    border-radius: 25px;
+    border: 5px
+            solid
+            white;
+    background-color: white;
+    background-attachment: fixed;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+}
+.filter_product
+{
+    border-width: 0;
+    padding: 10px 15px;
+    color: black;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    transition: 0.1s;
+    margin: 10px;
+}
+.filter_product_name
+{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    margin-right: 0;
+}
+.filter_product_category
+{
+    margin: 10px 0;
+}
+.filter_product_order
+{
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 0;
+
+}
+.filter_button
+{
+    border-radius: 25px;
+}
+.filter_button:hover
+{
+    box-shadow: 0 0 10px black;
+}
+
+/*
 PRODUCTS
  */
 a
