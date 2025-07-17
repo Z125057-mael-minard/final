@@ -9,6 +9,19 @@ $stmt = $db->prepare("SELECT * FROM user_addresses WHERE user_id = ?");
 $stmt->execute(array($current_session['user_id']));
 $address = $stmt->fetch();
 
+$email = $user['user_email'];
+$name = $user['user_name'];
+if ($address == null){
+  $country = "";
+  $city = "";
+  $street = "";
+  $house_nr = "";
+} else {
+  $country = $address["address_country"];
+  $city = $address["address_city"];
+  $street = $address["address_street"];
+  $house_nr = $address["address_house_number"];
+}
 ?>
 <div class="container">
   <div class="container-fluid">
@@ -21,17 +34,17 @@ $address = $stmt->fetch();
     <h2 class="title-header">Account details</h2>
     <form>
       <label for="email">Email:</label>
-      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo htmlspecialchars($user['user_email']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo $email ?>"><br><br>
       <label for="name">Name:</label>
-      <input type="text" disabled="disabled" id="name" name="name" value="<?php echo htmlspecialchars($user['user_name']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="name" name="name" value="<?php echo $name ?>"><br><br>
       <label for="country">Country:</label>
-      <input type="text" disabled="disabled" id="country" name="country" value="<?php echo htmlspecialchars($address['address_country']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="country" name="country" value="<?php echo $country?>"><br><br>
       <label for="city">City:</label>
-      <input type="text" disabled="disabled" id="city" name="city" value="<?php echo htmlspecialchars($address['address_city']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="city" name="city" value="<?php echo $city ?>"><br><br>
       <label for="street">Street:</label>
-      <input type="text" disabled="disabled" id="street" name="street" value="<?php echo htmlspecialchars($address['address_street']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="street" name="street" value="<?php echo $street ?>"><br><br>
       <label for="house_nr">House Number:</label>
-      <input type="text" disabled="disabled" id="house_nr" name="house_nr" value="<?php echo htmlspecialchars($address['address_house_number']) ?>"><br><br>
+      <input type="text" disabled="disabled" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>"><br><br>
     </form>
     <!-- 
     <h1 class="user-account-information-title"> Email </h1>

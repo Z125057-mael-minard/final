@@ -30,3 +30,4 @@ if ($_SESSION["logged_in"]) {
 ?>
 </body>
 </html>
+<script src="javascript/background_styling.js"></script>
