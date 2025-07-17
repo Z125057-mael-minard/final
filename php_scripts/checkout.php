@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 session_start();
 
@@ -9,6 +12,7 @@ $shipping_country = $_POST['shipping_country'];
 $shipping_city = $_POST['shipping_city'];
 $shipping_street = $_POST['shipping_street'];
 $shipping_houseNr = $_POST['shipping_houseNr'];
+$shipping_remember = $_POST['shipping_remember'];
 
 $creditcard_name = $_POST['creditcard_name'];
 $creditcard_expDate = $_POST['creditcard_expDate'];
@@ -55,5 +59,30 @@ foreach ($shoppingCart_products as $productId => $amount):{
     $stmt= $db->prepare($sql);
     $stmt->execute($data);
 };endforeach;
+
+// Save shipping info
+if ($shipping_remember){
+  echo 'remember';
+  $stmt = $db->prepare("SELECT * FROM sessions WHERE session_token = ?");
+  $stmt->execute(array($_SESSION["session_token"]));
+  $current_session = $stmt->fetch();
+  $stmt = $db->prepare("SELECT * FROM user_addresses WHERE user_id = ?");
+  $stmt->execute(array($current_session['user_id']));
+  $address = $stmt->fetch();
+  if ($address != null){
+    echo 'address existed';
+    $stmt = $db->prepare("UPDATE `user_addresses` SET `address_country` = ? WHERE `user_addresses`.`user_id` = ?");
+    $stmt->execute(array($shipping_country, $current_session['user_id']));
+    $stmt = $db->prepare("UPDATE `user_addresses` SET `address_city` = ? WHERE `user_addresses`.`user_id` = ?");
+    $stmt->execute(array($shipping_city, $current_session['user_id']));
+    $stmt = $db->prepare("UPDATE `user_addresses` SET `address_street` = ? WHERE `user_addresses`.`user_id` = ?");
+    $stmt->execute(array($shipping_street, $current_session['user_id']));
+    $stmt = $db->prepare("UPDATE `user_addresses` SET `address_house_number` = ? WHERE `user_addresses`.`user_id` = ?");
+    $stmt->execute(array($shipping_houseNr, $current_session['user_id']));
+  } else {
+    $stmt = $db->prepare("INSERT INTO user_addresses (user_id, address_country, address_city, address_street, address_house_number) VALUES (?, ?, ?, ?, ?)");
+    $stmt->execute(array($current_session['user_id'], $shipping_country, $shipping_city, $shipping_street, $shipping_houseNr));
+  }
+}
 
 header('location: ../thankyou.php?name=' . $shipping_name . '&orderId=' . $order_id->order_id);
