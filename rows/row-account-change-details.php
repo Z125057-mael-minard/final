@@ -12,30 +12,21 @@ $address = $stmt->fetch();
 <div class="container">
   <div class="container-fluid">
     <h2 class="title-header">Change account details</h2>
-    <form action="php_scripts/change_account_details.php" method="post">
-      <!-- Name -->
-      <div data-mdb-input-init class="form-outline mb-4">
-        <input type="text" id="form-name" class="form-control" name="name" placeholder="Old Password"/>
-      </div>
-      <!-- Country -->
-      <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form-country" class="form-control" name="country" placeholder="New Password"/>
-      </div>
-      <!-- City -->
-      <div data-mdb-input-init class="form-outline mb-4">
-          <input type="text" id="form-city" class="form-control" name="city" placeholder="New Password"/>
-      </div>
-
+    <form action="php_scripts/account-change-details.php" method="post">
+      <label for="email">Email:</label>
+      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo htmlspecialchars($user['user_email']) ?>"><br><br>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['user_name']) ?>"><br><br>
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="country" value="<?php echo htmlspecialchars($address['address_country']) ?>"><br><br>
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" value="<?php echo htmlspecialchars($address['address_city']) ?>"><br><br>
+      <label for="street">Street:</label>
+      <input type="text" id="street" name="street" value="<?php echo htmlspecialchars($address['address_street']) ?>"><br><br>
+      <label for="house_nr">House Number:</label>
+      <input type="text" id="house_nr" name="house_nr" value="<?php echo htmlspecialchars($address['address_house_number']) ?>"><br><br>
       <!-- Submit button -->
       <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Change</button>
     </form>
-    <div id="login-error-text">
-      <?php
-      if (isset($_SESSION['change_error'])) {
-        echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['change_error']) . '</div>';
-        unset($_SESSION['change_error']);
-      }
-      ?>
-    </div>
   </div>
 </div>

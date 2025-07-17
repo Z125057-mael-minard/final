@@ -18,8 +18,24 @@ $address = $stmt->fetch();
     unset($_SESSION['account_change']);
     }
     ?>
+    <h2 class="title-header">Account details</h2>
+    <form>
+      <label for="email">Email:</label>
+      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo htmlspecialchars($user['user_email']) ?>"><br><br>
+      <label for="name">Name:</label>
+      <input type="text" disabled="disabled" id="name" name="name" value="<?php echo htmlspecialchars($user['user_name']) ?>"><br><br>
+      <label for="country">Country:</label>
+      <input type="text" disabled="disabled" id="country" name="country" value="<?php echo htmlspecialchars($address['address_country']) ?>"><br><br>
+      <label for="city">City:</label>
+      <input type="text" disabled="disabled" id="city" name="city" value="<?php echo htmlspecialchars($address['address_city']) ?>"><br><br>
+      <label for="street">Street:</label>
+      <input type="text" disabled="disabled" id="street" name="street" value="<?php echo htmlspecialchars($address['address_street']) ?>"><br><br>
+      <label for="house_nr">House Number:</label>
+      <input type="text" disabled="disabled" id="house_nr" name="house_nr" value="<?php echo htmlspecialchars($address['address_house_number']) ?>"><br><br>
+    </form>
+    <!-- 
     <h1 class="user-account-information-title"> Email </h1>
-    <p class="user-account-info"><?php echo htmlspecialchars($user['user_email']) ?></p>
+    <p class="user-account-info"></p>
     <h1 class="user-account-information-title"> Name </h1>
     <p class="user-account-info"><?php echo htmlspecialchars($user['user_name']) ?></p>
     <h1 class="user-account-information-title"> Address </h1>
@@ -31,6 +47,7 @@ $address = $stmt->fetch();
     <p class="user-account-info"><?php echo htmlspecialchars($address['address_street']) ?></p>
     <h2 class="user-account-information-title"> House number </h2>
     <p class="user-account-info"><?php echo htmlspecialchars($address['address_house_number']) ?></p>
+    -->
     <a href="account-change-details.php" class="user-account-change-button">
       <div>
         Change account details
