@@ -31,12 +31,6 @@ $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
                     </form>
                 </div>
             </div>
-
-
-
-            <div class="add_car-image col-lg-5 col-sm-12">
-                <img id="image_preview" src="<?php echo("imgs/" . $product->category_image_path) ?>.png" alt="" style="width: 100%; height: auto">
-            </div>
         </div>
     </div>
 </div>

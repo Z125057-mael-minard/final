@@ -50,22 +50,22 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
     <div class="container-fluid">
-        <div class="home_filter-container d-flex justify-content-evenly mb-4">
+        <div id="filter-container" class="home_filter-container d-flex justify-content-evenly mb-4">
             <form type="GET" enctype="multipart/form-data">
-                <input name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
-                <select name="product_category" id="">
+                <input class="filter_product_name filter_product" name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
+                <select class="filter_product_category filter_product" name="product_category" id="">
                     <option value="">Select category</option>
                     <?php foreach ($categories as $category): ?>
                         <option value="<?php echo($category->category_id) ?>" <?php if(isset($_GET['product_category']) && $category->category_id == $_GET['product_category']){echo('selected');} ?>><?php echo($category->category_name) ?></option>
                     <?php endforeach; ?>
                 </select>
-                <select name="price_asc_desc" id="">
+                <select class="filter_product_order filter_product" name="price_asc_desc" id="">
                     <option value="">No order</option>
                     <option value="ASC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "ASC"){echo('selected');} ?>>Asc</option>
                     <option value="DESC" <?php if(isset($_GET['price_asc_desc']) && $_GET['price_asc_desc'] == "DESC"){echo('selected');} ?>>Desc</option>
                 </select>
-                <button style="margin-right: 10px;" type="submit" class="filter_button">Search</button>
-                <button onclick="clearFilter()" class="filter_button">Clear filter</button>
+                <button style="margin-right: 10px;" type="submit" class="filter_button filter_button_search filter_product">Search</button>
+                <button onclick="clearFilter()" class="filter_button filter_button_clear filter_product">Clear filter</button>
             </form>
         </div>
     </div>
@@ -81,7 +81,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                             <div class="product_container-image">
                                 <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
                             </div>
-                            <div class="d-block">
+                            <div class="d-block product-container-information">
                                 <p class="product_container-model_name"><?php echo($product->product_name)?></p>
                                 <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
                                 <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
@@ -93,6 +93,21 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
         </div>
     </div>
 </div>
+    <div id="disk-1" class="background-disk"></div>
+    <div id="disk-2" class="background-disk"></div>
+    <div id="disk-3" class="background-disk"></div>
+    <div id="disk-4" class="background-disk"></div>
+    <div id="disk-5" class="background-disk"></div>
+    <div id="disk-6" class="background-disk"></div>
+    <div id="disk-7" class="background-disk"></div>
+    <div id="disk-8" class="background-disk"></div>
+    <div id="disk-9" class="background-disk"></div>
+    <div id="disk-10" class="background-disk"></div>
+    <div id="disk-11" class="background-disk"></div>
+    <div id="disk-12" class="background-disk"></div>
+<div id="inner-disk-1" class="background-inner-disk"></div>
+<div id="inner-disk-2" class="background-inner-disk"></div>
+<div id="inner-disk-3" class="background-inner-disk"></div>
 
 <script src="javascript/clear_filter.js"></script>
 

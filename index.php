@@ -11,13 +11,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>E-Commerce</title>
 
-    <?php
-        require "rows/head.php";
-    ?>
-
 </head>
-<body>
+<body style="overflow-x: hidden">
+
 <?php
+    require "rows/head.php";
+
     require "rows/header.php";
 
     require "rows/row-index.php";
@@ -26,3 +25,6 @@
 ?>
 </body>
 </html>
+
+<script src="javascript/background_styling.js" onload="set_disks()"></script>
+<script src="javascript/header_scroll.js"></script>
