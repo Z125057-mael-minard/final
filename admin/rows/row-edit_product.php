@@ -13,6 +13,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <div class="container">
     <div class="container-fluid">
         <div class="edit_product-container">
+            <h2 class="admin_h2">Edit Product</h2>
             <form action="scripts/edit_product.php" method="post">
                 <input name="product_name" text="product_name" value="<?php echo($product->product_name) ?>">
                 <select name="product_category" id="">

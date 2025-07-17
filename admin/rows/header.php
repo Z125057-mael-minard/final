@@ -1,6 +1,6 @@
 <div class="container">
     <div class="container-fluid">
-        <div class="admin_header-container d-flex justify-content-evenly">
+        <div class="desktop_header header_container admin_header-container">
             <a href="dashboard.php">Dashboard</a>
             <a href="add_product.php">Add product</a>
             <a href="orders.php">Orders</a>
