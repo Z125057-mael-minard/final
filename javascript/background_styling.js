@@ -1,7 +1,6 @@
 let screen_height = document.body.scrollHeight;
 let screen_width = window.innerWidth;
 let season = getSeason(new Date());
-season = "imgs/Fall_blur.png";
 let header = document.getElementById("header");
 let filter = document.getElementById("filter-container");
 header.style.backgroundImage = "url('" + season + "')";

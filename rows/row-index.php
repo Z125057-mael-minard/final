@@ -50,6 +50,74 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
     <div class="container-fluid">
+        <div id="new-arrivals"></div>
+          <h1>New arrivals</h1>
+    <div class="container">
+      <div class="container-fluid">
+        <div class="collection row">
+          <?php 
+          $arr = $products;
+          usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
+          $arrivals = array_slice($arr, 0, 9);
+          foreach($arrivals as $product):
+          ?>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product_container d-block position-relative">
+              <a href="product.php?product_id=<?php echo($product->product_id)?>">
+                <div class="product_container-image">
+                  <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
+                </div>
+                <div class="d-block product-container-information">
+                  <p class="product_container-model_name"><?php echo($product->product_name)?></p>
+                  <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
+                  <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+        <div id="seasonal-products"></div>
+          <h1>Seasonal products</h1>
+    <div class="container">
+      <div class="container-fluid">
+        <div class="collection row">
+          <?php 
+          $season = 0;
+          $day = (int) date('d');
+          $month = (int) date('m');
+          if (($month === 11 && $day >= 1) || $month === 0 || $month === 1) {
+            $season = 3;
+          } else if ($month === 2 || $month === 3 || $month === 4) {
+            $season = 0;
+          } else if ($month === 5 || $month === 6 || $month === 7) {
+            $season = 1;
+          } else if ($month === 8 || $month === 9 || $month === 10) {
+            $season = 2;
+          }
+          foreach($products as $product):
+          if ($product->product_season == $season):
+          ?>
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="product_container d-block position-relative">
+              <a href="product.php?product_id=<?php echo($product->product_id)?>">
+                <div class="product_container-image">
+                  <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
+                </div>
+                <div class="d-block product-container-information">
+                  <p class="product_container-model_name"><?php echo($product->product_name)?></p>
+                  <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
+                  <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <?php endif; endforeach; ?>
+        </div>
+      </div>
+    </div>
         <div id="filter-container" class="home_filter-container d-flex justify-content-evenly mb-4">
             <form type="GET" enctype="multipart/form-data">
                 <input class="filter_product_name filter_product" name="product_name" type="text" value="<?php if(isset($_GET['product_name'])){echo($_GET['product_name']);} ?>">
