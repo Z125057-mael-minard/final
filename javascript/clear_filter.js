@@ -1,5 +1,9 @@
 
 function clearFilter() {
-    var baseUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-    window.history.replaceState({}, document.title, baseUrl);
+    document.getElementById('filter_product_name').value = "";
+
+    document.getElementById('filter_product_category').value = "";
+
+    document.getElementById('filter_product_order').value = "";
+
 }
