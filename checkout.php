@@ -19,7 +19,11 @@ require('php_scripts/check_user.php');
 <?php
 require "rows/header.php";
 
-require "rows/row-checkout.php";
+if ($_SESSION["shopping_cart"]){
+    require "rows/row-checkout.php";
+} else {
+  echo '<div class="alert alert-danger">No products in cart</div>';
+}
 
 require "rows/footer.php";
 ?>

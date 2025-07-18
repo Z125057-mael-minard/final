@@ -25,8 +25,9 @@ $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
 
                 <div class="product_detail-container-add_to_cart">
                     <form action="php_scripts/add_to_cart.php" method="post">
-                        <input name="amount" type="number">
+            <input name="amount" type="number" value=1 min=1 max=<?php echo ($product->product_stock)?> required="required">
                         <input name="product_id" type="hidden" value="<?php echo($product->product_id)?>">
+                        <input name="product_stock" type="hidden" value="<?php echo($product->product_stock)?>">
                         <input type="submit" value="Add To Cart">
                     </form>
                 </div>
