@@ -54,7 +54,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
           <h1>New arrivals</h1>
     <div class="container">
       <div class="container-fluid">
-        <div class="collection row">
+        <div class="sliding-container">
           <?php 
           $arr = $products;
           usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
