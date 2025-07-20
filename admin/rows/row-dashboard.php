@@ -38,9 +38,13 @@ $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                     <div class="col-2">
                         <p class="admin_product_container-stock"><?php echo($product->product_stock); ?></p>
                     </div>
-                    <div class="col-2">
-                        <a class="admin_product_container-edit" href="edit_product.php?product_id=<?php echo($product->product_id)?>">Edit</a>
-                        <a class="admin_product_container-remove" href="">X</a>
+                    <div class="row col-auto">
+                        <div class="col-auto align-content-center admin_product_container-edit">
+                            <a href="edit_product.php?product_id=<?php echo($product->product_id)?>">Edit</a>
+                        </div>
+                        <div class="col-auto align-content-center admin_product_container_remove">
+                            <a class="admin_product_remove" href="">X</a>
+                        </div>
                     </div>
                 </div>
             <?php endforeach; ?>

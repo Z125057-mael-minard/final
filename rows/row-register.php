@@ -24,7 +24,7 @@
       </div>
 
       <!-- Submit button -->
-      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+      <button id="register_button" type="submit" data-mdb-button-init data-mdb-ripple-init class="button_with_background btn btn-primary btn-block mb-4">Sign in</button>
     </form>
     <div id="register-error-text">
       <?php

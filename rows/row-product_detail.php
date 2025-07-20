@@ -23,11 +23,11 @@ $product = $db->query($sql)->fetch(PDO::FETCH_OBJ);
                     <p class="product_detail-container-item-stock">Stock: <?php echo($product->product_stock) ?></p>
                 </div>
 
-                <div class="product_detail-container-add_to_cart">
+                <div>
                     <form action="php_scripts/add_to_cart.php" method="post">
-                        <input name="amount" type="number">
+                        <input class="product_detail-add_to_cart" name="amount" type="number">
                         <input name="product_id" type="hidden" value="<?php echo($product->product_id)?>">
-                        <input type="submit" value="Add To Cart">
+                        <input id="add_to_cart" class="button_with_background" type="submit" value="Add To Cart">
                     </form>
                 </div>
             </div>

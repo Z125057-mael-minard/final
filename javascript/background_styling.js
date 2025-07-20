@@ -1,14 +1,47 @@
 let screen_height = document.body.scrollHeight;
 let screen_width = window.innerWidth;
 let season = getSeason(new Date());
-season = "imgs/Fall_blur.png";
 let header = document.getElementById("header");
+let adminHeader = document.getElementById("admin_header");
 let filter = document.getElementById("filter-container");
-header.style.backgroundImage = "url('" + season + "')";
-header.style.backgroundSize = screen_width + "px";
-filter.style.backgroundImage = "url('" + season + "')";
-filter.style.backgroundSize = screen_width + "px";
-
+let login = document.getElementById("login_button");
+let register = document.getElementById("register_button");
+let addToCart = document.getElementById("add_to_cart")
+let checkout = document.getElementById("checkout_button");
+if (header !== null)
+{
+    header.style.backgroundImage = "url('" + season + "')";
+    header.style.backgroundSize = screen_width + "px";
+}if (adminHeader !== null)
+{
+    adminHeader.style.backgroundImage = "url('../" + season + "')";
+    adminHeader.style.backgroundSize = screen_width + "px";
+}
+if (filter !== null)
+{
+    filter.style.backgroundImage = "url('" + season + "')";
+    filter.style.backgroundSize = screen_width + "px";
+}
+if (login !== null)
+{
+    login.style.backgroundImage = "url('" + season + "')";
+    login.style.backgroundSize = screen_width + "px";
+}
+if (register !== null)
+{
+    register.style.backgroundImage = "url('" + season + "')";
+    register.style.backgroundSize = screen_width + "px";
+}
+if (addToCart !== null)
+{
+    addToCart.style.backgroundImage = "url('" + season + "')";
+    addToCart.style.backgroundSize = screen_width + "px";
+}
+if (checkout !== null)
+{
+    checkout.style.backgroundImage = "url('" + season + "')";
+    checkout.style.backgroundSize = screen_width + "px";
+}
 function getSeason(date)
 {
     const month = date.getMonth();

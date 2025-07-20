@@ -31,3 +31,6 @@ else{
 ?>
 </body>
 </html>
+
+<script src="../javascript/header_scroll.js"></script>
+<script src="../javascript/background_styling.js"></script>
