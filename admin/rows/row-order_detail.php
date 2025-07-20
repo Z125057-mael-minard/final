@@ -12,17 +12,29 @@
 <div class="container">
     <div class="container-fluid">
         <div class="order_detail-container">
+            <h2 class="admin_h2">Order Detail</h2>
             <div class="order_detail-container-shipping-info">
-                <h3>Shipping Information</h3>
-                <p><?php echo($shipping_information->order_id) ?></p>
-                <p><?php echo($shipping_information->order_date) ?></p>
-                <p><?php echo($shipping_information->order_country) ?></p>
-                <p><?php echo($shipping_information->order_city) ?></p>
-                <p><?php echo($shipping_information->order_street) ?></p>
-                <p><?php echo($shipping_information->order_housenr) ?></p>
-                <p><?php echo($shipping_information->order_name) ?></p>
+                <h3 class="admin_h3">Shipping Information</h3>
+                <div class="order_detail-container-shipping-info-section">
+                    <p>Order ID:</p>
+                    <p><?php echo($shipping_information->order_id) ?></p>
+                </div>
+                <div class="order_detail-container-shipping-info-section">
+                    <p>Order Date:</p>
+                    <p><?php echo($shipping_information->order_date) ?></p>
+                </div>
+                <div class="order_detail-container-shipping-info-section">
+                    <p>Customer Name:</p>
+                    <p><?php echo($shipping_information->order_name) ?></p>
+                </div>
+                <h4>Order Address:</h4>
+                <div class="order_detail-container-shipping-info-section">
+                    <p><?php echo($shipping_information->order_country) ?></p>
+                    <p><?php echo($shipping_information->order_city) ?></p>
+                    <p><?php echo($shipping_information->order_street) ?> - <?php echo($shipping_information->order_housenr) ?></p>
+                </div>
             </div>
-            <h3>Ordered Products</h3>
+            <h3 class="admin_h3">Ordered Products</h3>
             <?php foreach($order_details as $order_detail): ?>
                 <?php
                     $sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id WHERE product_id = '$order_detail->product_id'";

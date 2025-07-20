@@ -10,6 +10,7 @@ $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <div class="container">
     <div class="container-fluid">
         <div class="dashboard-container">
+            <h2 class="admin_h2">Dashboard</h2>
             <div class="dashboard_row_1line row">
                 <div class="col-2">
                     <p>Category</p>

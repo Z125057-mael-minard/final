@@ -1,0 +1,12 @@
+@media only screen and (max-width: 991px) {
+    .admin_header-container {
+        display: block;
+        text-align: center;
+    }
+    .admin_header-container a {
+        display: block;
+        margin-bottom: 20px;
+        padding: 5px 10px;
+        width: auto;
+    }
+}
