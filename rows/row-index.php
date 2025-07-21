@@ -57,31 +57,13 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
       <div class="slider-wrapper">
         <button class="nav left" id="leftBtn">‹</button>
         <div class="slider-container" id="slider">
-          <div class="product">1</div>
-          <div class="product">2</div>
-          <div class="product">3</div>
-          <div class="product">4</div>
-          <div class="product">5</div>
-          <div class="product">6</div>
-          <div class="product">7</div>
-          <div class="product">8</div>
-        </div>
-        <button class="nav right" id="rightBtn">›</button>
-      </div>
-
-      <div class="container-fluid sliding-container">
-        <div class="sliding-arrow-left"></div>
-          <img src=""/>
-        <div class="sliding-arrow-right"></div>
-          <img src=""/>
-        <div class="sliding-items-container">
           <?php 
           $arr = $products;
           usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
           $arrivals = array_slice($arr, 0, 9);
           foreach($arrivals as $product):
           ?>
-          <div class="sliding-product col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="product col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="product_container d-block position-relative">
               <a href="product.php?product_id=<?php echo($product->product_id)?>">
                 <div class="product_container-image">
@@ -96,6 +78,16 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
             </div>
           </div>
           <?php endforeach; ?>
+        </div>
+        <button class="nav right" id="rightBtn">›</button>
+      </div>
+
+      <div class="container-fluid sliding-container">
+        <div class="sliding-arrow-left"></div>
+          <img src=""/>
+        <div class="sliding-arrow-right"></div>
+          <img src=""/>
+        <div class="sliding-items-container">
         </div>
       </div>
     </div>
@@ -199,5 +191,4 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <script src="javascript/clear_filter.js"></script>
 <script src="javascript/edit_filteroptions.js"></script>
-<script src="javascript/sliding-products.js"></script>
 <script src="javascript/sliding-products-gpt.js"></script>
