@@ -12,6 +12,19 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
     <div class="container-fluid">
+        <div id="login-error-text">
+            <?php
+            if (isset($_SESSION['admin-edit_product-error_message'])) {
+                echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['admin-edit_product-error_message']) . '</div>';
+                unset($_SESSION['admin-edit_product-error_message']);
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container-fluid">
         <h2 class="admin_h2">Edit Product</h2>
         <div class="edit_product-container">
             <form action="scripts/edit_product.php" method="post">
