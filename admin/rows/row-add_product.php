@@ -16,8 +16,8 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                         <option value="<?php echo($category->category_id) ?>"><?php echo($category->category_name) ?></option>
                     <?php endforeach; ?>
                 </select>
-                <input type="number" name="product_price" placeholder="Product Prize" required>
-                <input type="number" name="product_stock" placeholder="Product Stock" required>
+                <input type="number" name="product_price" placeholder="Product Prize" min="0" required>
+                <input type="number" name="product_stock" placeholder="Product Stock" min="0" required>
                 <input type="submit">
             </form>
         </div>
