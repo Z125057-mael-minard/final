@@ -53,6 +53,22 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
         <div id="new-arrivals"></div>
           <h1>New arrivals</h1>
     <div class="container">
+
+      <div class="slider-wrapper">
+        <button class="nav left" id="leftBtn">‹</button>
+        <div class="slider-container" id="slider">
+          <div class="product">1</div>
+          <div class="product">2</div>
+          <div class="product">3</div>
+          <div class="product">4</div>
+          <div class="product">5</div>
+          <div class="product">6</div>
+          <div class="product">7</div>
+          <div class="product">8</div>
+        </div>
+        <button class="nav right" id="rightBtn">›</button>
+      </div>
+
       <div class="container-fluid sliding-container">
         <div class="sliding-arrow-left"></div>
           <img src=""/>
@@ -184,3 +200,4 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <script src="javascript/clear_filter.js"></script>
 <script src="javascript/edit_filteroptions.js"></script>
 <script src="javascript/sliding-products.js"></script>
+<script src="javascript/sliding-products-gpt.js"></script>
