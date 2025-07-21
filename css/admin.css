@@ -49,7 +49,6 @@
 
 .orders-container-order {
     padding: 20px;
-    text-align: center;
 }
 
 .orders-container-order p {
@@ -58,6 +57,28 @@
 
 .orders-container-order p:last-child {
     margin-bottom: 0px;
+}
+
+.orders-container-order-details_container {
+    color: black;
+    display: flex;
+    justify-content: start;
+}
+
+.orders-container-order-details_container-text {
+    width:50px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.orders-container-order-details_container-data {
+    font-size: 20px;
+}
+
+.orders-container-order-status {
+    display: flex;
+    align-items: center;
 }
 
 .order_detail-container-shipping-info {

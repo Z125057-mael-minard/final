@@ -29,13 +29,43 @@ $orders = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                     }
                     endforeach;
                     ?>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-5">
+                <div class="col-12 mb-5">
                     <a href="order_detail.php?order_id=<?php echo($order->order_id); ?>">
                         <div class="orders-container-order" style="width: 100%; border: black solid 1px;border-radius: 5px;">
-                            <p><?php echo($order->order_id) ?></p>
-                            <p><?php echo($total_price) ?></p>
-                            <p style="color: <?php if($order->order_status_id == 1){echo('red');}else{echo('green');} ?>"><?php echo($order->order_status_name) ?></p>
-                            <p><?php echo($order->order_date) ?></p>
+                            <div class="row justify-content-between">
+                                <div class="col-auto">
+                                    <div class="orders-container-order-details_container">
+                                        <div class="orders-container-order-details_container-text">
+                                            <p>ID:</p>
+                                        </div>
+                                        <div class="orders-container-order-details_container-data">
+                                            <p><?php echo($order->order_id) ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="orders-container-order-details_container">
+                                        <div class="orders-container-order-details_container-text">
+                                            <p>&yen;:</p>
+                                        </div>
+                                        <div class="orders-container-order-details_container-data">
+                                            <p><?php echo($total_price) ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="orders-container-order-details_container">
+                                        <div class="orders-container-order-details_container-text">
+                                            <p>Date:</p>
+                                        </div>
+                                        <div class="orders-container-order-details_container-data">
+                                            <p><?php echo($order->order_date) ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto text-center orders-container-order-status">
+                                    <div class="">
+                                        <p style="margin-bottom: 0;">Status:</p>
+                                        <p style="color: <?php if($order->order_status_id == 1){echo('red');}else{echo('green');} ?>"><?php echo($order->order_status_name) ?></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </a>
                 </div>
