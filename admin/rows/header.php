@@ -1,4 +1,4 @@
-<div class="container">
+<div id="admin_header" class="header_container">
     <div class="container-fluid">
         <div class="desktop_header header_container admin_header-container">
             <a href="dashboard.php">Dashboard</a>

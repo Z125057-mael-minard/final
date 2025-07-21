@@ -31,3 +31,5 @@ else{
 ?>
 </body>
 </html>
+
+<script src="../javascript/background_styling.js"></script>
