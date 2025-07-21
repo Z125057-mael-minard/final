@@ -53,15 +53,19 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
         <div id="new-arrivals"></div>
           <h1>New arrivals</h1>
     <div class="container">
-      <div class="container-fluid">
-        <div class="sliding-container">
+      <div class="container-fluid sliding-container">
+        <div class="sliding-arrow-left"></div>
+          <img src=""/>
+        <div class="sliding-arrow-right"></div>
+          <img src=""/>
+        <div class="sliding-items-container">
           <?php 
           $arr = $products;
           usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
           $arrivals = array_slice($arr, 0, 9);
           foreach($arrivals as $product):
           ?>
-          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="sliding-product col-12 col-sm-6 col-lg-4 col-xl-3">
             <div class="product_container d-block position-relative">
               <a href="product.php?product_id=<?php echo($product->product_id)?>">
                 <div class="product_container-image">
@@ -178,5 +182,5 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <div id="inner-disk-3" class="background-inner-disk"></div>
 
 <script src="javascript/clear_filter.js"></script>
-
 <script src="javascript/edit_filteroptions.js"></script>
+<script src="javascript/sliding-products.js"></script>

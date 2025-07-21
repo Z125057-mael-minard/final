@@ -37,6 +37,49 @@ HEADER
 }
 
 /*
+NEW ARRIVALS / SEASONALS
+*/
+.sliding-container 
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sliding-arrow-left
+{
+  order: 0;
+  background-color:red;
+  width:100px;
+  height:40px;
+  .hidden {
+    display: none;
+  }
+}
+.sliding-arrow-right
+{
+  order: 2;
+  background-color:red;
+  width:100px;
+  height:40px;
+  .hidden {
+    display: none;
+  }
+}
+.sliding-items-container 
+{
+  padding-top: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+.sliding-product
+{
+  flex-basis: 31%;
+}
+
+/*
 FILTER SEARCH
  */
 .home_filter-container

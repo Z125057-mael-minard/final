@@ -1,0 +1,1 @@
+const slidingPds = document.querySelectorAll('.');

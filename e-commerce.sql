@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 18, 2025 at 03:28 PM
+-- Generation Time: Jul 21, 2025 at 08:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -167,7 +167,8 @@ INSERT INTO `orders` (`order_id`, `order_date`, `user_id`, `order_country`, `ord
 (148, '2025-07-17 11:42:23', 0, 'France', 'Lyon', 'Grande Rue de la Guillotiere', '26', 'Mael', 1),
 (149, '2025-07-17 11:46:36', 0, 'France', 'Lyon', 'Grande Rue de la Guillotiere', '26', 'Mael', 1),
 (150, '2025-07-18 15:08:57', 0, 'Netherlands', 'Amsterdam', 'Kanker Str.', '420', 'admin', 1),
-(151, '2025-07-18 15:09:23', 0, 'Netherlands', 'Amsterdam', 'Fuck you street', '420', 'admin', 1);
+(151, '2025-07-18 15:09:23', 0, 'Netherlands', 'Amsterdam', 'Fuck you street', '420', 'admin', 1),
+(152, '2025-07-18 18:36:22', 0, 'a', 'a', 'a', 'a', 'test', 1);
 
 -- --------------------------------------------------------
 
@@ -288,61 +289,64 @@ CREATE TABLE `products` (
   `product_image_path` varchar(300) NOT NULL DEFAULT 'no_image',
   `category_id` int(10) NOT NULL DEFAULT 0,
   `product_price` int(10) NOT NULL DEFAULT 0,
-  `product_stock` varchar(5) NOT NULL DEFAULT '0'
+  `product_stock` varchar(5) NOT NULL DEFAULT '0',
+  `product_season` int(1) NOT NULL DEFAULT -1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `category_id`, `product_price`, `product_stock`) VALUES
-(1, 'Pocky Chocolaty', '', 1, 50, '200'),
-(2, 'Pocky Strawberry', '', 1, 170, '238'),
-(3, 'KitKat Matcha', 'products_imgs/KitKat_matcha.png', 1, 350, '411'),
-(4, 'KitKat Sakura', '', 1, 400, '357'),
-(5, 'Black Thunder Chocolate Bar', '', 1, 150, '386'),
-(6, 'Meiji Apollo Strawberry Chocolates', '', 1, 200, '241'),
-(7, 'Dars Chocolate', '', 1, 180, '491'),
-(8, 'Koala\'s March Cookies', '', 1, 200, '132'),
-(9, 'Glico Almond Chocolate', '', 1, 300, '98'),
-(10, 'Meiji Macadamia Chocolate', '', 1, 350, '216'),
-(11, 'Toppo Chocolate Sticks', '', 1, 200, '274'),
-(12, 'Meiji Marble Chocolates', '', 1, 200, '479'),
-(13, 'Meiji Kinoko no Yama', '', 1, 200, '283'),
-(14, 'Takenoko no Sato', '', 1, 200, '11'),
-(15, 'Chocoball Peanut', '', 1, 180, '367'),
-(16, 'Shiroi Koibito Cookies', '', 2, 1200, '414'),
-(17, 'Tokyo Banana', '', 2, 1500, '286'),
-(18, 'Matcha Mochi', '', 2, 300, '125'),
-(19, 'Daifuku Mochi', '', 2, 200, '442'),
-(20, 'Yokan Sweet Bean Jelly', '', 2, 300, '322'),
-(21, 'Sakuma Drops Candy', '', 2, 300, '429'),
-(22, 'Konpeito Sugar Candy', '', 2, 300, '82'),
-(23, 'Bourbon Alfort Cookies', '', 2, 200, '457'),
-(24, 'Lotte Custard Cake', '', 2, 300, '201'),
-(25, 'Calbee Shrimp Chips', '', 3, 150, '97'),
-(26, 'Senbei Rice Crackers', '', 3, 200, '497'),
-(27, 'Jagabee Potato Snacks', '', 3, 200, '150'),
-(28, 'Wasabi Peas', '', 3, 200, '317'),
-(29, 'Umeboshi Dried Plum Snacks', '', 3, 300, '310'),
-(30, 'Koikeya Seaweed Chips', '', 3, 200, '148'),
-(31, 'Pretz Tomato Flavor', '', 3, 150, '388'),
-(32, 'Peach Gummies', '', 3, 150, '277'),
-(33, 'Grape Gummies', '', 3, 150, '65'),
-(34, 'Ramune Soda', '', 4, 180, '278'),
-(35, 'Melon Soda', '', 4, 200, '298'),
-(36, 'Suntory Boss Coffee', '', 4, 180, '296'),
-(37, 'Itoen Green Tea', '', 4, 150, '150'),
-(38, 'UCC Coffee Can', '', 4, 180, '333'),
-(39, 'Calpis Soda', '', 4, 200, '223'),
-(40, 'Fanta Grape', '', 4, 180, '130'),
-(41, 'Asahi Juroku-cha Tea', '', 4, 180, '93'),
-(42, 'Sapporo Ichiban Ramen', '', 5, 300, '478'),
-(43, 'Nissin Cup Noodles', '', 5, 200, '275'),
-(44, 'TestProduct', 'no_image', 1, 33, '44'),
-(45, 'Esmee\'s Chocolate', 'no_image', 1, 100, '1'),
-(46, 'Mael Chocolate', 'no_image', 3, 200, '10'),
-(47, 'Gabin Wiener', 'no_image', 3, 3000, '1');
+INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `category_id`, `product_price`, `product_stock`, `product_season`) VALUES
+(1, 'Pocky Chocolaty', '', 1, 50, '200', -1),
+(2, 'Pocky Strawberry', '', 1, 170, '238', -1),
+(3, 'KitKat Matcha', 'products_imgs/KitKat_matcha.png', 1, 350, '411', -1),
+(4, 'KitKat Sakura', '', 1, 400, '357', -1),
+(5, 'Black Thunder Chocolate Bar', '', 1, 150, '386', -1),
+(6, 'Meiji Apollo Strawberry Chocolates', '', 1, 200, '241', -1),
+(7, 'Dars Chocolate', '', 1, 180, '491', -1),
+(8, 'Koala\'s March Cookies', '', 1, 200, '132', -1),
+(9, 'Glico Almond Chocolate', '', 1, 300, '98', -1),
+(10, 'Meiji Macadamia Chocolate', '', 1, 350, '216', -1),
+(11, 'Toppo Chocolate Sticks', '', 1, 200, '274', -1),
+(12, 'Meiji Marble Chocolates', '', 1, 200, '479', -1),
+(13, 'Meiji Kinoko no Yama', '', 1, 200, '283', -1),
+(14, 'Takenoko no Sato', '', 1, 200, '11', -1),
+(15, 'Chocoball Peanut', '', 1, 180, '367', -1),
+(16, 'Shiroi Koibito Cookies', '', 2, 1200, '414', -1),
+(17, 'Tokyo Banana', '', 2, 1500, '286', -1),
+(18, 'Matcha Mochi', '', 2, 300, '125', -1),
+(19, 'Daifuku Mochi', '', 2, 200, '442', -1),
+(20, 'Yokan Sweet Bean Jelly', '', 2, 300, '322', -1),
+(21, 'Sakuma Drops Candy', '', 2, 300, '429', -1),
+(22, 'Konpeito Sugar Candy', '', 2, 300, '82', -1),
+(23, 'Bourbon Alfort Cookies', '', 2, 200, '457', -1),
+(24, 'Lotte Custard Cake', '', 2, 300, '201', -1),
+(25, 'Calbee Shrimp Chips', '', 3, 150, '97', -1),
+(26, 'Senbei Rice Crackers', '', 3, 200, '497', -1),
+(27, 'Jagabee Potato Snacks', '', 3, 200, '150', -1),
+(28, 'Wasabi Peas', '', 3, 200, '317', -1),
+(29, 'Umeboshi Dried Plum Snacks', '', 3, 300, '310', -1),
+(30, 'Koikeya Seaweed Chips', '', 3, 200, '148', -1),
+(31, 'Pretz Tomato Flavor', '', 3, 150, '388', -1),
+(32, 'Peach Gummies', '', 3, 150, '277', -1),
+(33, 'Grape Gummies', '', 3, 150, '65', -1),
+(34, 'Ramune Soda', '', 4, 180, '278', -1),
+(35, 'Melon Soda', '', 4, 200, '298', -1),
+(36, 'Suntory Boss Coffee', '', 4, 180, '296', -1),
+(37, 'Itoen Green Tea', '', 4, 150, '150', -1),
+(38, 'UCC Coffee Can', '', 4, 180, '333', -1),
+(39, 'Calpis Soda', '', 4, 200, '223', -1),
+(40, 'Fanta Grape', '', 4, 180, '130', -1),
+(41, 'Asahi Juroku-cha Tea', '', 4, 180, '93', -1),
+(42, 'Sapporo Ichiban Ramen', '', 5, 300, '478', -1),
+(43, 'Nissin Cup Noodles', '', 5, 200, '275', -1),
+(44, 'TestProduct', 'no_image', 1, 33, '44', -1),
+(45, 'Esmee\'s Chocolate', 'no_image', 1, 100, '1', -1),
+(46, 'Mael Chocolate', 'no_image', 3, 200, '10', -1),
+(47, 'Gabin Wiener', 'no_image', 3, 3000, '1', -1),
+(48, 'Fall Cookie', 'no_image', 1, 100, '200', 2),
+(49, 'Summer Blast Ice Tea', 'no_image', 4, 200, '100', 1);
 
 -- --------------------------------------------------------
 
@@ -357,13 +361,6 @@ CREATE TABLE `sessions` (
   `host_name` varchar(200) NOT NULL,
   `end_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `sessions`
---
-
-INSERT INTO `sessions` (`session_id`, `session_token`, `user_id`, `host_name`, `end_time`) VALUES
-(23, '3398bdfa6eadea20d43410f7d8bcd4ca56d2fc597a6737f8949ce9e99c8e5041', 10, 'elitebook', '2025-09-16 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -487,7 +484,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `order_id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT for table `order_rows`
@@ -505,13 +502,13 @@ ALTER TABLE `order_status`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `session_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `session_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
