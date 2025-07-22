@@ -12,12 +12,25 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
     <div class="container-fluid">
+        <div id="login-error-text">
+            <?php
+            if (isset($_SESSION['admin-edit_product-error_message'])) {
+                echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['admin-edit_product-error_message']) . '</div>';
+                unset($_SESSION['admin-edit_product-error_message']);
+            }
+            ?>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="container-fluid">
         <h2 class="admin_h2">Edit Product</h2>
         <div class="edit_product-container">
             <form action="scripts/edit_product.php" method="post">
                 <div class="edit_product-container-item_box">
                     <p>Product Name:</p>
-                    <input name="product_name" text="product_name" value="<?php echo($product->product_name) ?>">
+                    <input name="product_name" text="product_name" value="<?php echo($product->product_name) ?>" required>
                 </div>
 
                 <div class="edit_product-container-item_box">
@@ -31,12 +44,12 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
                 <div class="edit_product-container-item_box">
                     <p>Product Price:</p>
-                    <input type="number" name="product_price" value="<?php echo($product->product_price) ?>">
+                    <input type="number" name="product_price" min="0" value="<?php echo($product->product_price) ?>" required>
                 </div>
 
                 <div class="edit_product-container-item_box">
                     <p>Product Stock:</p>
-                    <input type="number" name="product_stock" value="<?php echo($product->product_stock) ?>">
+                    <input type="number" name="product_stock" min="0" value="<?php echo($product->product_stock) ?>" required>
                 </div>
 
                 <input type="hidden" name="product_id" value="<?php echo($product->product_id) ?>">
