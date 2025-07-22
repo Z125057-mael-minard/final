@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 21, 2025 at 08:45 PM
+-- Generation Time: Jul 22, 2025 at 12:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -298,55 +298,51 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `category_id`, `product_price`, `product_stock`, `product_season`) VALUES
-(1, 'Pocky Chocolaty', '', 1, 50, '200', -1),
-(2, 'Pocky Strawberry', '', 1, 170, '238', -1),
+(1, 'Pocky Chocolaty', 'products_imgs/Pocky_Chocolaty.png', 1, 50, '200', -1),
+(2, 'Pocky Strawberry', 'products_imgs/Pocky_Strawberry.png', 1, 170, '238', -1),
 (3, 'KitKat Matcha', 'products_imgs/KitKat_matcha.png', 1, 350, '411', -1),
-(4, 'KitKat Sakura', '', 1, 400, '357', -1),
-(5, 'Black Thunder Chocolate Bar', '', 1, 150, '386', -1),
-(6, 'Meiji Apollo Strawberry Chocolates', '', 1, 200, '241', -1),
-(7, 'Dars Chocolate', '', 1, 180, '491', -1),
-(8, 'Koala\'s March Cookies', '', 1, 200, '132', -1),
-(9, 'Glico Almond Chocolate', '', 1, 300, '98', -1),
-(10, 'Meiji Macadamia Chocolate', '', 1, 350, '216', -1),
-(11, 'Toppo Chocolate Sticks', '', 1, 200, '274', -1),
-(12, 'Meiji Marble Chocolates', '', 1, 200, '479', -1),
-(13, 'Meiji Kinoko no Yama', '', 1, 200, '283', -1),
-(14, 'Takenoko no Sato', '', 1, 200, '11', -1),
-(15, 'Chocoball Peanut', '', 1, 180, '367', -1),
-(16, 'Shiroi Koibito Cookies', '', 2, 1200, '414', -1),
-(17, 'Tokyo Banana', '', 2, 1500, '286', -1),
-(18, 'Matcha Mochi', '', 2, 300, '125', -1),
-(19, 'Daifuku Mochi', '', 2, 200, '442', -1),
-(20, 'Yokan Sweet Bean Jelly', '', 2, 300, '322', -1),
-(21, 'Sakuma Drops Candy', '', 2, 300, '429', -1),
-(22, 'Konpeito Sugar Candy', '', 2, 300, '82', -1),
-(23, 'Bourbon Alfort Cookies', '', 2, 200, '457', -1),
-(24, 'Lotte Custard Cake', '', 2, 300, '201', -1),
-(25, 'Calbee Shrimp Chips', '', 3, 150, '97', -1),
-(26, 'Senbei Rice Crackers', '', 3, 200, '497', -1),
-(27, 'Jagabee Potato Snacks', '', 3, 200, '150', -1),
-(28, 'Wasabi Peas', '', 3, 200, '317', -1),
-(29, 'Umeboshi Dried Plum Snacks', '', 3, 300, '310', -1),
-(30, 'Koikeya Seaweed Chips', '', 3, 200, '148', -1),
-(31, 'Pretz Tomato Flavor', '', 3, 150, '388', -1),
-(32, 'Peach Gummies', '', 3, 150, '277', -1),
-(33, 'Grape Gummies', '', 3, 150, '65', -1),
-(34, 'Ramune Soda', '', 4, 180, '278', -1),
-(35, 'Melon Soda', '', 4, 200, '298', -1),
-(36, 'Suntory Boss Coffee', '', 4, 180, '296', -1),
-(37, 'Itoen Green Tea', '', 4, 150, '150', -1),
-(38, 'UCC Coffee Can', '', 4, 180, '333', -1),
-(39, 'Calpis Soda', '', 4, 200, '223', -1),
-(40, 'Fanta Grape', '', 4, 180, '130', -1),
-(41, 'Asahi Juroku-cha Tea', '', 4, 180, '93', -1),
-(42, 'Sapporo Ichiban Ramen', '', 5, 300, '478', -1),
-(43, 'Nissin Cup Noodles', '', 5, 200, '275', -1),
-(44, 'TestProduct', 'no_image', 1, 33, '44', -1),
-(45, 'Esmee\'s Chocolate', 'no_image', 1, 100, '1', -1),
-(46, 'Mael Chocolate', 'no_image', 3, 200, '10', -1),
-(47, 'Gabin Wiener', 'no_image', 3, 3000, '1', -1),
-(48, 'Fall Cookie', 'no_image', 1, 100, '200', 2),
-(49, 'Summer Blast Ice Tea', 'no_image', 4, 200, '100', 1);
+(4, 'KitKat Sakura', 'products_imgs/KitKat_sakura.png', 1, 400, '357', -1),
+(5, 'Black Thunder Chocolate Bar', 'products_imgs/Black_Thunder_Chocolate_Bar.png', 1, 150, '386', -1),
+(6, 'Meiji Apollo Strawberry Chocolates', 'products_imgs/Meiji_Apollo_Strawberry_Chocolates.png', 1, 200, '241', -1),
+(7, 'Dars Chocolate', 'products_imgs/Dars_Chocolate.png', 1, 180, '491', -1),
+(8, 'Koala\'s March Cookies', 'products_imgs/Koala\'s_March_Cookies.png', 1, 200, '132', -1),
+(9, 'Glico Almond Chocolate', 'products_imgs/Glico_Almond_Chocolate.png', 1, 300, '98', -1),
+(10, 'Meiji Macadamia Chocolate', 'products_imgs/Meiji_Macadamia_Chocolate.png', 1, 350, '216', -1),
+(11, 'Toppo Chocolate Sticks', 'products_imgs/Toppo_Chocolate_Sticks.png', 1, 200, '274', -1),
+(12, 'Meiji Marble Chocolates', 'products_imgs/Meiji_Marble_Chocolates.png', 1, 200, '479', -1),
+(13, 'Meiji Kinoko no Yama', 'products_imgs/Meiji_Kinoko_no_Yama.png', 1, 200, '283', -1),
+(14, 'Takenoko no Sato', 'products_imgs/Takenoko_no_Sato.png', 1, 200, '11', -1),
+(15, 'Chocoball Peanut', 'products_imgs/Chocoball_Peanut.png', 1, 180, '367', -1),
+(16, 'Shiroi Koibito Cookies', 'products_imgs/Shiroi_Koibito_Cookies.png', 2, 1200, '414', -1),
+(17, 'Tokyo Banana', 'products_imgs/Tokyo_Banana.png', 2, 1500, '286', -1),
+(18, 'Matcha Mochi', 'products_imgs/Matcha_Mochi.png', 2, 300, '125', -1),
+(19, 'Daifuku Mochi', 'products_imgs/Daifuku_Mochi.png', 2, 200, '442', -1),
+(20, 'Yokan Sweet Bean Jelly', 'products_imgs/Yokan_Sweet_Bean_Jelly.png', 2, 300, '322', -1),
+(21, 'Sakuma Drops Candy', 'products_imgs/Sakuma_Drops_Candy.png', 2, 300, '429', -1),
+(22, 'Konpeito Sugar Candy', 'products_imgs/Konpeito_Sugar_Candy.png', 2, 300, '82', -1),
+(23, 'Bourbon Alfort Cookies', 'products_imgs/Bourbon_Alfort_Cookies.png', 2, 200, '457', -1),
+(24, 'Lotte Custard Cake', 'products_imgs/Lotte_Custard_Cake.png', 2, 300, '201', -1),
+(25, 'Calbee Shrimp Chips', 'products_imgs/Calbee_Shrimp_Chips.png', 3, 150, '97', -1),
+(26, 'Senbei Rice Crackers', 'products_imgs/Senbei_Rice_Crackers.png', 3, 200, '497', -1),
+(27, 'Jagabee Potato Snacks', 'products_imgs/Jagabee_Potato_Snacks.png', 3, 200, '150', -1),
+(28, 'Wasabi Peas', 'products_imgs/Wasabi_Peas.png', 3, 200, '317', -1),
+(29, 'Umeboshi Dried Plum Snacks', 'products_imgs/Umeboshi_Dried_Plum_Snacks.png', 3, 300, '310', -1),
+(30, 'Koikeya Seaweed Chips', 'products_imgs/Koikeya_Seaweed_Chips.png', 3, 200, '148', -1),
+(31, 'Pretz Tomato Flavor', 'products_imgs/Pretz_Tomato_Flavor.png', 3, 150, '388', -1),
+(32, 'Peach Gummies', 'products_imgs/Peach_Gummies.png', 3, 150, '277', -1),
+(33, 'Grape Gummies', 'products_imgs/Grape_Gummies.png', 3, 150, '65', -1),
+(34, 'Ramune Soda', 'products_imgs/Ramune_Soda.png', 4, 180, '278', -1),
+(35, 'Melon Soda', 'products_imgs/Melon_Soda.png', 4, 200, '298', -1),
+(36, 'Suntory Boss Coffee', 'products_imgs/Suntory_Boss_Coffee.png', 4, 180, '296', -1),
+(37, 'Itoen Green Tea', 'products_imgs/Itoen_Green_Tea.png', 4, 150, '150', -1),
+(38, 'UCC Coffee Can', 'products_imgs/UCC_Coffee_Can.png', 4, 180, '333', -1),
+(39, 'Calpis Soda', 'products_imgs/Calpis_Soda.png', 4, 200, '223', -1),
+(40, 'Fanta Grape', 'products_imgs/Fanta_Grape.png', 4, 180, '130', -1),
+(41, 'Asahi Juroku-cha Tea', 'products_imgs/Asahi_Juroku-cha_Tea.png', 4, 180, '93', -1),
+(42, 'Sapporo Ichiban Ramen', 'products_imgs/Sapporo_Ichiban_Ramen.png', 5, 300, '478', -1),
+(43, 'Nissin Cup Noodles', 'products_imgs/Nissin_Cup_Noodles.png', 5, 200, '275', -1),
+(48, 'Fall Cookie', 'products_imgs/Fall_Cookie.png', 1, 100, '200', 2),
+(49, 'Summer Blast Ice Tea', 'products_imgs/Summer_Blast_Ice_Tea.jpg', 4, 200, '100', 1);
 
 -- --------------------------------------------------------
 
@@ -508,7 +504,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `session_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `session_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `users`
