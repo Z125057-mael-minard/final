@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2025 at 12:22 PM
+-- Generation Time: Jul 22, 2025 at 02:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -299,11 +299,11 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `category_id`, `product_price`, `product_stock`, `product_season`) VALUES
 (1, 'Pocky Chocolaty', 'products_imgs/Pocky_Chocolaty.png', 1, 50, '200', -1),
-(2, 'Pocky Strawberry', 'products_imgs/Pocky_Strawberry.png', 1, 170, '238', -1),
+(2, 'Pocky Strawberry', 'products_imgs/Pocky_Strawberry.png', 1, 170, '238', 1),
 (3, 'KitKat Matcha', 'products_imgs/KitKat_matcha.png', 1, 350, '411', -1),
 (4, 'KitKat Sakura', 'products_imgs/KitKat_sakura.png', 1, 400, '357', -1),
 (5, 'Black Thunder Chocolate Bar', 'products_imgs/Black_Thunder_Chocolate_Bar.png', 1, 150, '386', -1),
-(6, 'Meiji Apollo Strawberry Chocolates', 'products_imgs/Meiji_Apollo_Strawberry_Chocolates.png', 1, 200, '241', -1),
+(6, 'Meiji Apollo Strawberry Chocolates', 'products_imgs/Meiji_Apollo_Strawberry_Chocolates.png', 1, 200, '241', 1),
 (7, 'Dars Chocolate', 'products_imgs/Dars_Chocolate.png', 1, 180, '491', -1),
 (8, 'Koala\'s March Cookies', 'products_imgs/Koala\'s_March_Cookies.png', 1, 200, '132', -1),
 (9, 'Glico Almond Chocolate', 'products_imgs/Glico_Almond_Chocolate.png', 1, 300, '98', -1),
@@ -314,7 +314,7 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `cat
 (14, 'Takenoko no Sato', 'products_imgs/Takenoko_no_Sato.png', 1, 200, '11', -1),
 (15, 'Chocoball Peanut', 'products_imgs/Chocoball_Peanut.png', 1, 180, '367', -1),
 (16, 'Shiroi Koibito Cookies', 'products_imgs/Shiroi_Koibito_Cookies.png', 2, 1200, '414', -1),
-(17, 'Tokyo Banana', 'products_imgs/Tokyo_Banana.png', 2, 1500, '286', -1),
+(17, 'Tokyo Banana', 'products_imgs/Tokyo_Banana.png', 2, 1500, '286', 1),
 (18, 'Matcha Mochi', 'products_imgs/Matcha_Mochi.png', 2, 300, '125', -1),
 (19, 'Daifuku Mochi', 'products_imgs/Daifuku_Mochi.png', 2, 200, '442', -1),
 (20, 'Yokan Sweet Bean Jelly', 'products_imgs/Yokan_Sweet_Bean_Jelly.png', 2, 300, '322', -1),
@@ -328,11 +328,11 @@ INSERT INTO `products` (`product_id`, `product_name`, `product_image_path`, `cat
 (28, 'Wasabi Peas', 'products_imgs/Wasabi_Peas.png', 3, 200, '317', -1),
 (29, 'Umeboshi Dried Plum Snacks', 'products_imgs/Umeboshi_Dried_Plum_Snacks.png', 3, 300, '310', -1),
 (30, 'Koikeya Seaweed Chips', 'products_imgs/Koikeya_Seaweed_Chips.png', 3, 200, '148', -1),
-(31, 'Pretz Tomato Flavor', 'products_imgs/Pretz_Tomato_Flavor.png', 3, 150, '388', -1),
-(32, 'Peach Gummies', 'products_imgs/Peach_Gummies.png', 3, 150, '277', -1),
+(31, 'Pretz Tomato Flavor', 'products_imgs/Pretz_Tomato_Flavor.png', 3, 150, '388', 1),
+(32, 'Peach Gummies', 'products_imgs/Peach_Gummies.png', 3, 150, '277', 1),
 (33, 'Grape Gummies', 'products_imgs/Grape_Gummies.png', 3, 150, '65', -1),
-(34, 'Ramune Soda', 'products_imgs/Ramune_Soda.png', 4, 180, '278', -1),
-(35, 'Melon Soda', 'products_imgs/Melon_Soda.png', 4, 200, '298', -1),
+(34, 'Ramune Soda', 'products_imgs/Ramune_Soda.png', 4, 180, '278', 1),
+(35, 'Melon Soda', 'products_imgs/Melon_Soda.png', 4, 200, '298', 1),
 (36, 'Suntory Boss Coffee', 'products_imgs/Suntory_Boss_Coffee.png', 4, 180, '296', -1),
 (37, 'Itoen Green Tea', 'products_imgs/Itoen_Green_Tea.png', 4, 150, '150', -1),
 (38, 'UCC Coffee Can', 'products_imgs/UCC_Coffee_Can.png', 4, 180, '333', -1),
