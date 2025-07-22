@@ -50,70 +50,72 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
 <div class="container">
   <div class="container-fluid">
-    <div class="new-arr-seasonals-section">
-      <h1 id="slider-header"></h1>
-      <div class="container">
-        <div class="slider-wrapper">
-          <button class="nav left" id="leftBtn">‹</button>
-          <div class="slider-container">
-            <div class="slider-glow"></div>
-            <div class="slider-products-wrapper" id="slider">
-              <?php 
-              $arr = $products;
-              usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
-              $arrivals = array_slice($arr, 0, 9);
-              foreach($arrivals as $product):
-              ?>
-              <div class="product sliding-product col-12 col-sm-6 col-lg-3 col-xl-3">
-                <div class="product_container d-block position-relative">
-                  <a href="product.php?product_id=<?php echo($product->product_id)?>">
-                    <div class="product_container-image">
-                      <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
-                    </div>
-                    <div class="d-block product-container-information">
-                      <p class="product_container-model_name"><?php echo($product->product_name)?></p>
-                      <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
-                      <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
-                    </div>
-                  </a>
+    <div class="slide-filter-section">
+      <div class="new-arr-seasonals-section">
+        <h1 id="slider-header"></h1>
+        <div class="container">
+          <div class="slider-wrapper">
+            <button class="nav left" id="leftBtn">‹</button>
+            <div class="slider-container">
+              <div class="slider-glow"></div>
+              <div class="slider-products-wrapper" id="slider">
+                <?php 
+                $arr = $products;
+                usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
+                $arrivals = array_slice($arr, 0, 9);
+                foreach($arrivals as $product):
+                ?>
+                <div class="product sliding-product col-12 col-sm-6 col-lg-3 col-xl-3">
+                  <div class="product_container d-block position-relative">
+                    <a href="product.php?product_id=<?php echo($product->product_id)?>">
+                      <div class="product_container-image">
+                        <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
+                      </div>
+                      <div class="d-block product-container-information">
+                        <p class="product_container-model_name"><?php echo($product->product_name)?></p>
+                        <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
+                        <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <?php endforeach; ?>
-              <div class="product gap col-12 col-sm-6 col-lg-3 col-xl-3"></div>
-              <?php 
-              $season = 0;
-              $day = (int) date('d');
-              $month = (int) date('m');
-              if (($month === 11 && $day >= 1) || $month === 0 || $month === 1) {
-              $season = 3;
-              } else if ($month === 2 || $month === 3 || $month === 4) {
-              $season = 0;
-              } else if ($month === 5 || $month === 6 || $month === 7) {
-              $season = 1;
-              } else if ($month === 8 || $month === 9 || $month === 10) {
-              $season = 2;
-              }
-              foreach($products as $product):
-              if ($product->product_season == $season):
-              ?>
-              <div class="product sliding-product seasonal-product col-12 col-sm-6 col-lg-3 col-xl-3">
-                <div class="product_container d-block position-relative">
-                  <a href="product.php?product_id=<?php echo($product->product_id)?>">
-                    <div class="product_container-image">
-                      <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
-                    </div>
-                    <div class="d-block product-container-information">
-                      <p class="product_container-model_name"><?php echo($product->product_name)?></p>
-                      <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
-                      <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
-                    </div>
-                  </a>
+                <?php endforeach; ?>
+                <div class="product gap col-12 col-sm-6 col-lg-3 col-xl-3"></div>
+                <?php 
+                $season = 0;
+                $day = (int) date('d');
+                $month = (int) date('m');
+                if (($month === 11 && $day >= 1) || $month === 0 || $month === 1) {
+                $season = 3;
+                } else if ($month === 2 || $month === 3 || $month === 4) {
+                $season = 0;
+                } else if ($month === 5 || $month === 6 || $month === 7) {
+                $season = 1;
+                } else if ($month === 8 || $month === 9 || $month === 10) {
+                $season = 2;
+                }
+                foreach($products as $product):
+                if ($product->product_season == $season):
+                ?>
+                <div class="product sliding-product seasonal-product col-12 col-sm-6 col-lg-3 col-xl-3">
+                  <div class="product_container d-block position-relative">
+                    <a href="product.php?product_id=<?php echo($product->product_id)?>">
+                      <div class="product_container-image">
+                        <img src="imgs/<?php echo($product->product_image_path)?>" alt="">
+                      </div>
+                      <div class="d-block product-container-information">
+                        <p class="product_container-model_name"><?php echo($product->product_name)?></p>
+                        <p class="product_container-category"><?php if($product->category_id==0){echo("N/A");}else{echo($product->category_name);}?></p>
+                        <p class="product_container-price">&yen; <?php echo($product->product_price); ?></p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
+                <?php endif; endforeach; ?>
               </div>
-              <?php endif; endforeach; ?>
             </div>
+            <button class="nav right" id="rightBtn">›</button>
           </div>
-          <button class="nav right" id="rightBtn">›</button>
         </div>
       </div>
       <div id="filter-container" class="home_filter-container d-flex justify-content-evenly mb-4">
