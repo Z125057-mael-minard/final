@@ -22,7 +22,9 @@ require "rows/header.php";
 if ($_SESSION["shopping_cart"]){
   require "rows/row-shopping_cart.php";
 } else {
-  echo '<h3 class="empty-cart-msg">No products in cart! Let\'s <a href="index.php">add some</a>.</div>';
+  echo '<div class="row justify-content-center">
+            <div class="col-auto cart_empty_cart_msg">No products in cart! Let\'s <a href="index.php">add some</a>.</div>
+        </div>';
 }
 
 require "rows/footer.php";

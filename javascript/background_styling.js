@@ -1,6 +1,7 @@
 let screen_height = document.body.scrollHeight;
 let screen_width = window.innerWidth;
 let season = getSeason(new Date());
+season = "imgs/Winter_blur.png";
 let header = document.getElementById("header");
 let adminHeader = document.getElementById("admin_header");
 let filter = document.getElementById("filter-container");
@@ -8,6 +9,11 @@ let login = document.getElementById("login_button");
 let register = document.getElementById("register_button");
 let addToCart = document.getElementById("add_to_cart")
 let checkout = document.getElementById("checkout_button");
+let send = document.getElementById("send_checkout");
+let thanks = document.getElementById("thank_you");
+let add = document.getElementById("add_product");
+let edit = document.getElementById("edit_product");
+let success = document.getElementById("successful_register");
 if (header !== null)
 {
     header.style.backgroundImage = "url('" + season + "')";
@@ -41,6 +47,31 @@ if (checkout !== null)
 {
     checkout.style.backgroundImage = "url('" + season + "')";
     checkout.style.backgroundSize = screen_width + "px";
+}
+if (send !== null)
+{
+    send.style.backgroundImage = "url('" + season + "')";
+    send.style.backgroundSize = screen_width + "px";
+}
+if (thanks !== null)
+{
+    thanks.style.backgroundImage = "url('" + season + "')";
+    thanks.style.backgroundSize = screen_width + "px";
+}
+if (add !== null)
+{
+    add.style.backgroundImage = "url('../" + season + "')";
+    add.style.backgroundSize = screen_width + "px";
+}
+if (edit !== null)
+{
+    edit.style.backgroundImage = "url('../" + season + "')";
+    edit.style.backgroundSize = screen_width + "px";
+}
+if (success !== null)
+{
+    success.style.backgroundImage = "url('../" + season + "')";
+    success.style.backgroundSize = screen_width + "px";
 }
 function getSeason(date)
 {

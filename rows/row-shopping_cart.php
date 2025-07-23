@@ -71,10 +71,6 @@ $total_price = 0;
 
             </div>
         <?php endforeach;?>
-        <div id="empty_cart" class="row justify-content-center cart_no_products" onscroll="is_cart_empty(0)">
-            <p class="col-auto">Your cart is empty...</p>
-            <a class="col-auto" href="index.php">see products !</a>
-        </div>
         <div class="row checkout_container justify-content-end">
             <div class="col-auto align-items-center">
                 <div class="col-auto cart_total_price">

@@ -6,19 +6,6 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <div class="container">
-    <div class="container-fluid">
-        <div id="login-error-text">
-            <?php
-            if (isset($_SESSION['admin-add_product-error_message'])) {
-                echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['admin-add_product-error_message']) . '</div>';
-                unset($_SESSION['admin-add_product-error_message']);
-            }
-            ?>
-        </div>
-    </div>
-</div>
-
-<div class="container">
     <div class="container-fluid d-flex justify-content-center">
         <div class="add_product-container">
             <h2 class="admin_h2">Add Product</h2>
@@ -29,9 +16,18 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                         <option value="<?php echo($category->category_id) ?>"><?php echo($category->category_name) ?></option>
                     <?php endforeach; ?>
                 </select>
-                <input type="number" name="product_price" placeholder="Product Prize" min="0" required>
-                <input type="number" name="product_stock" placeholder="Product Stock" min="0" required>
-                <input type="submit">
+                <input type="number" name="product_price" placeholder="Product Prize" required>
+                <input type="number" name="product_stock" placeholder="Product Stock" required>
+                <div class="row admin_add_or_cancel_container">
+                    <div class="col justify-content-start">
+                        <input id="add_product" class="col-auto button_with_background" type="submit">
+                    </div>
+                    <div class="row col justify-content-end">
+                        <a class="col-auto flex-wrap align-content-center" href="dashboard.php">Cancel</a>
+                    </div>
+
+                </div>
+
             </form>
         </div>
     </div>
