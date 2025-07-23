@@ -37,24 +37,6 @@ $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="dashboard_row row edited">
-                <div class="col-2 full-width">
-                    <p class="admin_product_container-product_name">KatKit</p>
-                </div>
-                <div class="col-2">
-                    <p class="admin_product_container-category">Chocolate</p>
-                </div>
-                <div class="col-2">
-                    <p class="admin_product_container-price">&yen 1750</p>
-                </div>
-                <div class="col-2">
-                    <p class="admin_product_container-stock">12</p>
-                </div>
-                <div class="col-2">
-                    <a class="admin_product_container-edit" href="">Edit</a>
-                    <a class="admin_product_container-remove" href="">X</a>
-                </div>
-            </div>
         </div>
         <div class="footer"></div>
     </div>

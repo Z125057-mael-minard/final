@@ -5,10 +5,12 @@ $orderId = $_GET['orderId'];
 
 <div class="container">
     <div class="container-fluid">
-        <div class="thankyou-container">
-            <p>Thank you <?php echo($shipping_name) ?> for your order!</p>
-            <p>Your orderder number is: <?php echo($orderId) ?></p>
-            <a href="index.php">Go to home page</a>
+        <div id="thank_you" class="thankyou_disk_container">
+            <div class="thankyou-container">
+                <p>Thank you <?php echo($shipping_name) ?> for your order!</p>
+                <p>Your orderder number is: <?php echo($orderId) ?></p>
+                <a href="index.php">Go to home page</a>
+            </div>
         </div>
     </div>
 </div>

@@ -31,3 +31,4 @@ require "rows/footer.php";
 </html>
 
 <script src="javascript/background_styling.js"></script>
+<script src="javascript/checkout_input_style.js"></script>

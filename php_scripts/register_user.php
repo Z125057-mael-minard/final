@@ -46,9 +46,17 @@ if ($registered) {
   $user_password = password_hash($password, PASSWORD_BCRYPT);
   $stmt = $db->prepare("INSERT INTO users (user_name, user_email, user_password, user_is_admin) VALUES (?, ?, ?, ?)");
   $stmt->execute(array($name, $email, $user_password, 0));
-  echo '<h2 class="successful-register">Successfully created account!</h2>';
-  echo '<a href="../login.php">Go back to login</a>';
+  echo '<link rel="stylesheet" type="text/css" href="../css/main.css">
+        <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+        <div id="successful_register" class="successful_register_disk_container">
+            <div class="successful_register_container">
+                <h2 class="successful_register">Successfully created account!</h2>
+                <a href="../login.php">Go back to login</a>
+            </div>
+        </div>
+        <script src="../javascript/background_styling.js"></script>';
 }
 else{
   header('location: ../register.php');
 }
+

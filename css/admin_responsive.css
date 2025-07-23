@@ -1,12 +1,26 @@
-@media only screen and (max-width: 991px) {
-    .admin_header-container {
-        display: block;
-        text-align: center;
+@media only screen and (min-width: 576px) {
+    /*
+    HEADER
+     */
+    .big_header
+    {
+        display: flex;
     }
-    .admin_header-container a {
-        display: block;
-        margin-bottom: 20px;
-        padding: 5px 10px;
-        width: auto;
+    .mobile_header
+    {
+        display: none;
+    }
+}
+@media only screen and (max-width: 576px) {
+    /*
+    HEADER
+     */
+    .big_header
+    {
+        display: none;
+    }
+    .mobile_header
+    {
+        display: flex;
     }
 }
