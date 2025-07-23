@@ -250,8 +250,8 @@ a
 .product_container-image img
 {
     width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .product-container-information
@@ -665,6 +665,14 @@ ACCOUNT
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
+}
+.account_changes_buttons_container
+{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
 }
 .account_cancel_changes
 {

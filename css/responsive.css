@@ -144,11 +144,11 @@
     }
     .thankyou-container p
     {
-        font-size: 15px;
+        font-size: 12px;
     }
     .thankyou-container a
     {
-        font-size: 15px;
+        font-size: 12px;
     }
     /*
     SUCCESSFUL REGISTER
@@ -160,11 +160,11 @@
     }
     .successful_register
     {
-        font-size: 15px;
+        font-size: 12px;
     }
     .successful_register_container a
     {
-        font-size: 15px;
+        font-size: 12px;
     }
     /*
     ACCOUNT
@@ -177,6 +177,14 @@
     .account_buttons_container div
     {
         margin-bottom: 20px;
+    }
+    .cart_empty_cart_msg
+    {
+        font-size: 12px;
+    }
+    .cart_empty_cart_msg a
+    {
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 400px) {
