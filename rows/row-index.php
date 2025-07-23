@@ -114,9 +114,9 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 <?php endif; endforeach; ?>
               </div>
             </div>
-            <div class="nav right d-flex justify-content-center align-content-center" id="rightBtn">
+            <button class="nav right d-flex justify-content-center align-content-center" id="rightBtn">
                 <p>›</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>

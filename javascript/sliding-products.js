@@ -99,6 +99,5 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
   updateMetrics();
   updateSection();
-  updateSizes();
 });
 
