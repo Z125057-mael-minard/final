@@ -9,6 +9,22 @@ let productWidth = 0;
 let totalProducts = 0;
 let maxScroll = 0;
 
+function getSeason(date)
+{
+    const month = date.getMonth();
+    const day = date.getDate();
+
+  if ((month === 11 && day >= 1) || month === 0 || month === 1) {
+    return 3;
+  } else if (month === 2 || month === 3 || month === 4) {
+    return 0;
+  } else if (month === 5 || month === 6 || month === 7) {
+    return 1;
+  } else if (month === 8 || month === 9 || month === 10) {
+    return 2;
+  }
+}
+
 function updateMetrics() {
   const product = slider.querySelector(".product");
   productWidth = product.offsetWidth + parseInt(getComputedStyle(product).marginLeft) + parseInt(getComputedStyle(product).marginRight);
@@ -58,10 +74,12 @@ function updateSection() {
 
 function updateToNewArrivals() {
   slider_h.textContent = "New arrivals";
+  slider_h.style.color = "#de5050";
 }
 
 function updateToSeasonals() {
   slider_h.textContent = "Seasonal products";
+  slider_h.style.color = "#e6ac3e";
 }
 
 leftBtn.addEventListener("click", () => slideBy(-1));

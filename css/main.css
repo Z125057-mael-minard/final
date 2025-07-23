@@ -53,6 +53,24 @@ NEW ARRIVALS / SEASONALS
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 0px 5px rgba(0,0,0,0.75);*/
+  margin-bottom: 25px;
+  transition: 0.1s;
+  background-color: white;
+  h1 {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    transition: all 0.1s;
+  }
+}
+.slide-filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 #slider-header{
