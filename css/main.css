@@ -51,6 +51,11 @@ NEW ARRIVALS / SEASONALS
   margin-bottom: 25px;
   transition: 0.1s;
   background-color: white;
+  h1 {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    transition: all 0.1s;
+  }
 }
 .slide-filter-section {
   display: flex;
