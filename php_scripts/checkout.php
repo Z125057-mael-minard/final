@@ -12,7 +12,7 @@ $shipping_country = $_POST['shipping_country'];
 $shipping_city = $_POST['shipping_city'];
 $shipping_street = $_POST['shipping_street'];
 $shipping_houseNr = $_POST['shipping_houseNr'];
-$shipping_remember = $_POST['shipping_remember'];
+$shipping_remember = isset($_POST['shipping_remember']);
 
 $creditcard_name = $_POST['creditcard_name'];
 $creditcard_expDate = $_POST['creditcard_expDate'];
@@ -59,6 +59,19 @@ foreach ($shoppingCart_products as $productId => $amount):{
     $stmt= $db->prepare($sql);
     $stmt->execute($data);
 };endforeach;
+
+// Update stock
+foreach ($shoppingCart_products as $productId => $amount):{
+  $stmt = $db->prepare("SELECT * FROM products WHERE product_id = ?");
+  $stmt->execute(array($productId));
+  $product = $stmt->fetch();
+  $stock = $product['product_stock'] - $amount;
+  $stmt = $db->prepare("UPDATE `products` SET `product_stock` = ? WHERE `product_id` = ?");
+  $stmt->execute(array($stock, $productId));
+};endforeach;
+
+// Empty shopping cart
+unset($_SESSION['shopping_cart']);
 
 // Save shipping info
 if ($shipping_remember){
