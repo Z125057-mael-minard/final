@@ -182,4 +182,4 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 
   <script src="javascript/clear_filter.js"></script>
   <script src="javascript/edit_filteroptions.js"></script>
-  <script src="javascript/sliding-products-gpt.js"></script>
+  <script src="javascript/sliding-products.js"></script>

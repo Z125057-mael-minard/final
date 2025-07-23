@@ -74,12 +74,12 @@ function updateSection() {
 
 function updateToNewArrivals() {
   slider_h.textContent = "New arrivals";
-  slider_h.style.color = "#de5050";
+  slider_h.style.color = "#ffffff";
 }
 
 function updateToSeasonals() {
   slider_h.textContent = "Seasonal products";
-  slider_h.style.color = "#e6ac3e";
+  slider_h.style.color = "#ffffff";
 }
 
 leftBtn.addEventListener("click", () => slideBy(-1));
