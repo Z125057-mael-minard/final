@@ -49,11 +49,11 @@
                     $sql = "SELECT * FROM products AS prod JOIN categories AS cat ON prod.category_id = cat.category_id WHERE product_id = '$order_detail->product_id'";
                     $product_details = $db->query($sql)->fetch(PDO::FETCH_OBJ);
                 ?>
-                <div class="order_detail-container-row d-flex justify-content-evenly mb-4">
-                    <p><?php echo($product_details->product_name); ?></p>
-                    <p><?php echo($product_details->category_name); ?></p>
-                    <p><?php echo($product_details->product_price); ?></p>
-                    <p><?php echo($order_detail->order_product_amount); ?></p>
+                <div class="row order_detail-container-row d-flex mb-4">
+                    <p class="col"><?php echo($product_details->product_name); ?></p>
+                    <p class="col"><?php echo($product_details->category_name); ?></p>
+                    <p class="col"><?php echo($product_details->product_price); ?></p>
+                    <p class="col"><?php echo($order_detail->order_product_amount); ?></p>
                 </div>
             <?php endforeach; ?>
         </div>

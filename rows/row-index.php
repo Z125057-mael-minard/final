@@ -51,7 +51,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 <div class="container">
   <div class="container-fluid">
     <div class="slide-filter-section">
-      <div class="new-arr-seasonals-section">
+      <div id="slider_container" class="new-arr-seasonals-section">
         <h1 id="slider-header"></h1>
         <div class="container">
           <div class="slider-wrapper">
@@ -94,6 +94,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 } else if ($month === 8 || $month === 9 || $month === 10) {
                 $season = 2;
                 }
+                $season = 3;
                 foreach($products as $product):
                 if ($product->product_season == $season):
                 ?>
@@ -114,7 +115,9 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 <?php endif; endforeach; ?>
               </div>
             </div>
-            <button class="nav right" id="rightBtn">›</button>
+            <div class="nav right d-flex justify-content-center align-content-center" id="rightBtn">
+                <p>›</p>
+            </div>
           </div>
         </div>
       </div>

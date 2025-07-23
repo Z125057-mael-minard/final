@@ -200,6 +200,17 @@ ORDERS
 
 .orders-container-order {
     padding: 20px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    transition: 0.1s;
+}
+.orders-container-order:hover
+{
+    box-shadow: 0 0 10px black;
+    transform:
+            translateY(5px)
+            scale(105%);
 }
 
 .orders-container-order p {
@@ -207,7 +218,7 @@ ORDERS
 }
 
 .orders-container-order p:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .orders-container-order-details_container {
@@ -238,6 +249,21 @@ ORDERS
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 70px;
+}
+
+.order_detail-container-shipping-info select
+{
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    transition: 0.1s;
+}
+.order_detail-container-shipping-info select:active
+{
+    box-shadow: 0 0 10px black;
 }
 
 .order_detail-container-shipping-info-section {

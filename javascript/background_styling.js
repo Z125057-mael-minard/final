@@ -4,6 +4,7 @@ let season = getSeason(new Date());
 season = "imgs/Winter_blur.png";
 let header = document.getElementById("header");
 let adminHeader = document.getElementById("admin_header");
+let slide = document.getElementById("slider_container");
 let filter = document.getElementById("filter-container");
 let login = document.getElementById("login_button");
 let register = document.getElementById("register_button");
@@ -27,6 +28,11 @@ if (filter !== null)
 {
     filter.style.backgroundImage = "url('" + season + "')";
     filter.style.backgroundSize = screen_width + "px";
+}
+if (slide !== null)
+{
+    slide.style.backgroundImage = "url('" + season + "')";
+    slide.style.backgroundSize = screen_width + "px";
 }
 if (login !== null)
 {
