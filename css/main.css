@@ -648,6 +648,7 @@ p
 }
 .button_with_background:hover
 {
+    color: white;
     box-shadow: 0 0 9px black;
     transform: scale(105%);
 }

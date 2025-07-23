@@ -179,7 +179,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
   <div id="inner-disk-1" class="background-inner-disk"></div>
   <div id="inner-disk-2" class="background-inner-disk"></div>
   <div id="inner-disk-3" class="background-inner-disk"></div>
-
+</div>
   <script src="javascript/clear_filter.js"></script>
   <script src="javascript/edit_filteroptions.js"></script>
   <script src="javascript/sliding-products-gpt.js"></script>

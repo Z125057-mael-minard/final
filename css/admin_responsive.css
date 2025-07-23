@@ -10,6 +10,14 @@
     {
         display: none;
     }
+    .order_detail-container-shipping-info
+    {
+        max-width: 500px;
+    }
+    .order_details_back_container
+    {
+        max-width: 500px;
+    }
 }
 @media only screen and (max-width: 576px) {
     /*
@@ -22,5 +30,13 @@
     .mobile_header
     {
         display: flex;
+    }
+    .order_detail-container-shipping-info
+    {
+        max-width: 400px;
+    }
+    .order_details_back_container
+    {
+        max-width: 400px;
     }
 }

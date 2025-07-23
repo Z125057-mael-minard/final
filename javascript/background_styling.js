@@ -1,9 +1,17 @@
 let screen_height = document.body.scrollHeight;
 let screen_width = window.innerWidth;
+let back_width = screen_width;
+if(screen_width < 600)
+{
+    back_width = screen_width * 3;
+}
+else if(screen_width < 900)
+{
+    back_width = screen_width * 1.5;
+}
 let season = getSeason(new Date());
-season = "imgs/Winter_blur.png";
+
 let header = document.getElementById("header");
-let adminHeader = document.getElementById("admin_header");
 let slide = document.getElementById("slider_container");
 let filter = document.getElementById("filter-container");
 let login = document.getElementById("login_button");
@@ -12,73 +20,59 @@ let addToCart = document.getElementById("add_to_cart")
 let checkout = document.getElementById("checkout_button");
 let send = document.getElementById("send_checkout");
 let thanks = document.getElementById("thank_you");
-let add = document.getElementById("add_product");
-let edit = document.getElementById("edit_product");
 let success = document.getElementById("successful_register");
+
 if (header !== null)
 {
     header.style.backgroundImage = "url('" + season + "')";
-    header.style.backgroundSize = screen_width + "px";
-}if (adminHeader !== null)
-{
-    adminHeader.style.backgroundImage = "url('../" + season + "')";
-    adminHeader.style.backgroundSize = screen_width + "px";
+    header.style.backgroundSize = back_width + "px";
 }
 if (filter !== null)
 {
     filter.style.backgroundImage = "url('" + season + "')";
-    filter.style.backgroundSize = screen_width + "px";
+    filter.style.backgroundSize = back_width + "px";
 }
 if (slide !== null)
 {
     slide.style.backgroundImage = "url('" + season + "')";
-    slide.style.backgroundSize = screen_width + "px";
+    slide.style.backgroundSize = back_width + "px";
 }
 if (login !== null)
 {
     login.style.backgroundImage = "url('" + season + "')";
-    login.style.backgroundSize = screen_width + "px";
+    login.style.backgroundSize = back_width + "px";
 }
 if (register !== null)
 {
     register.style.backgroundImage = "url('" + season + "')";
-    register.style.backgroundSize = screen_width + "px";
+    register.style.backgroundSize = back_width + "px";
 }
 if (addToCart !== null)
 {
     addToCart.style.backgroundImage = "url('" + season + "')";
-    addToCart.style.backgroundSize = screen_width + "px";
+    addToCart.style.backgroundSize = back_width + "px";
 }
 if (checkout !== null)
 {
     checkout.style.backgroundImage = "url('" + season + "')";
-    checkout.style.backgroundSize = screen_width + "px";
+    checkout.style.backgroundSize = back_width + "px";
 }
 if (send !== null)
 {
     send.style.backgroundImage = "url('" + season + "')";
-    send.style.backgroundSize = screen_width + "px";
+    send.style.backgroundSize = back_width + "px";
 }
 if (thanks !== null)
 {
     thanks.style.backgroundImage = "url('" + season + "')";
-    thanks.style.backgroundSize = screen_width + "px";
-}
-if (add !== null)
-{
-    add.style.backgroundImage = "url('../" + season + "')";
-    add.style.backgroundSize = screen_width + "px";
-}
-if (edit !== null)
-{
-    edit.style.backgroundImage = "url('../" + season + "')";
-    edit.style.backgroundSize = screen_width + "px";
+    thanks.style.backgroundSize = back_width + "px";
 }
 if (success !== null)
 {
     success.style.backgroundImage = "url('../" + season + "')";
-    success.style.backgroundSize = screen_width + "px";
+    success.style.backgroundSize = back_width + "px";
 }
+
 function getSeason(date)
 {
     const month = date.getMonth();
@@ -110,13 +104,13 @@ function set_disks()
         disk = document.getElementById("disk-" + i);
         size = Math.floor(Math.random() * screen_width * 0.5 + 200);
         x = Math.floor(Math.random() * screen_width -(size*0.5));
-        y = Math.floor(Math.random() * (screen_height-1000) -(size*0.75)) + 1000;
+        y = Math.floor(Math.random() * (screen_height-500)) -(size*0.75) + 1500;
         disk.style.top = y + "px";
         disk.style.left = x + "px";
         disk.style.width = size + "px";
         disk.style.height = size + "px";
         disk.style.backgroundImage = "url('" + season + "')";
-        disk.style.backgroundSize = screen_width + "px";
+        disk.style.backgroundSize = back_width + "px";
 
         //white inner disk probable setting
         if (innerDisks > 0 && Math.floor(Math.random() * 5) === 1)

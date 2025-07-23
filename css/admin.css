@@ -29,6 +29,16 @@ DASHBOARD
 {
     justify-content: space-evenly;
 }
+.admin_product_container
+{
+    border-radius: 15px;
+    border: solid
+    5px
+    white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    margin-bottom: 25px;
+    background-color: white;
+}
 .admin_product_container-product_name
 {
     font-family: "Cascadia Code", sans-serif;
@@ -36,11 +46,6 @@ DASHBOARD
     border-width: 0 0 2px 0;
     border-style: solid;
     border-color: #bfbfbf;
-}
-.admin_product_container-category
-{
-    font-family: "Rockwell", sans-serif;
-    font-weight: bolder;
 }
 .admin_product_container-price
 {
@@ -51,6 +56,12 @@ DASHBOARD
 {
     font-family: "Roboto", sans-serif;
     font-weight: bold;
+}
+.admin_product_container_amount
+{
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 .admin_product_container-edit a
 {
@@ -244,11 +255,13 @@ ORDERS
 }
 
 .order_detail-container-shipping-info {
-    max-width: 400px;
     display: block;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    padding: 30px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .order_detail-container-shipping-info select
@@ -268,4 +281,15 @@ ORDERS
 
 .order_detail-container-shipping-info-section {
     margin-bottom: 20px;
+}
+
+.order_details_back_container
+{
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+}
+.order_details_back:hover
+{
+    transform: scale(105%);
 }

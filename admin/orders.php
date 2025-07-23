@@ -32,4 +32,5 @@ else{
 </body>
 </html>
 
-<script src="../javascript/background_styling.js"></script>
+<script src="../javascript/header_scroll.js"></script>
+<script src="../javascript/admin_background_styling.js"></script>

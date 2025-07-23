@@ -16,7 +16,7 @@ require __DIR__ . '/../php_scripts/check_user.php';
     ?>
 
 </head>
-<body>
+<body style="overflow-x: hidden">
 <?php
 if ($is_admin == 1){
   require "rows/header.php";
@@ -33,4 +33,4 @@ else{
 </html>
 
 <script src="../javascript/header_scroll.js"></script>
-<script src="../javascript/background_styling.js"></script>
+<script src="../javascript/admin_background_styling.js" onload="admin_set_disks()"></script>
