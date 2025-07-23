@@ -31,7 +31,7 @@ $orders = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                     ?>
                 <div class="col-12 mb-5">
                     <a href="order_detail.php?order_id=<?php echo($order->order_id); ?>">
-                        <div class="orders-container-order" style="width: 100%; border: black solid 1px;border-radius: 5px;">
+                        <div class="orders-container-order">
                             <div class="row justify-content-between">
                                 <div class="col-auto">
                                     <div class="orders-container-order-details_container">
