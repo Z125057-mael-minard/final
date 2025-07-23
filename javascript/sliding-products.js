@@ -2,6 +2,7 @@ const slider = document.getElementById("slider");
 const leftBtn = document.getElementById("leftBtn");
 const rightBtn = document.getElementById("rightBtn");
 const seasonal_products = document.querySelectorAll(".seasonal-product");
+const products = document.querySelectorAll(".sliding-product");
 
 const slider_h = document.getElementById("slider-header");
 
@@ -22,6 +23,19 @@ function getSeason(date)
     return 1;
   } else if (month === 8 || month === 9 || month === 10) {
     return 2;
+  }
+}
+
+function updateSizes() {
+  let rect = slider.getBoundingClientRect();
+  let mid = rect.left + slider.scrollLeft;
+  for (let product of products) {
+    let prect = product.getBoundingClientRect();
+    let pmid = product.offsetLeft + prect.width / 2;
+    let dist = Math.abs(mid - pmid);
+    let maxDist = rect.width / 2 ;
+    let scale = 100 - (50 * dist/maxDist);
+    product.style.transform = `scale(${scale}%)`;
   }
 }
 
@@ -87,6 +101,7 @@ rightBtn.addEventListener("click", () => slideBy(1));
 slider.addEventListener("scroll", () => {
   window.requestAnimationFrame(updateButtons);
   window.requestAnimationFrame(updateSection);
+  window.requestAnimationFrame(updateSizes);
 });
 
 window.addEventListener("resize", () => {
@@ -99,5 +114,6 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
   updateMetrics();
   updateSection();
+  updateSizes();
 });
 

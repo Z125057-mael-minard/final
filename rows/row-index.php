@@ -80,7 +80,6 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                   </div>
                 </div>
                 <?php endforeach; ?>
-                <div class="product gap col-12 col-sm-6 col-lg-3 col-xl-3"></div>
                 <?php 
                 $season = 0;
                 $day = (int) date('d');
