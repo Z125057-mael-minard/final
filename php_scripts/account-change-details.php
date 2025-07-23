@@ -26,7 +26,7 @@ $stmt->execute(array($name, $current_session['user_id']));
 $stmt = $db->prepare("SELECT * FROM user_addresses WHERE user_id = ?");
 $stmt->execute(array($current_session['user_id']));
 $addr = $stmt->fetch();
-if ($user == null){
+if ($addr == null){
   $stmt = $db->prepare("INSERT INTO user_addresses (user_id, address_country, address_city, address_street, address_house_number) VALUES (?, ?, ?, ?, ?)");
   $stmt->execute(array($current_session['user_id'], $country, $city, $street, $house_nr));
 } else {
