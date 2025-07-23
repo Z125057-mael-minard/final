@@ -25,27 +25,43 @@ if ($address == null){
 ?>
 <div class="container">
   <div class="container-fluid">
-    <?php 
-    if (isset($_SESSION['account_change'])){
-    echo '<div class="alert-success">' . htmlspecialchars($_SESSION['account_change']) . '</div>';
-    unset($_SESSION['account_change']);
-    }
-    ?>
-    <h2 class="title-header">Account details</h2>
-    <form>
-      <label for="email">Email:</label>
-      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo $email ?>"><br><br>
-      <label for="name">Name:</label>
-      <input type="text" disabled="disabled" id="name" name="name" value="<?php echo $name ?>"><br><br>
-      <label for="country">Country:</label>
-      <input type="text" disabled="disabled" id="country" name="country" value="<?php echo $country?>"><br><br>
-      <label for="city">City:</label>
-      <input type="text" disabled="disabled" id="city" name="city" value="<?php echo $city ?>"><br><br>
-      <label for="street">Street:</label>
-      <input type="text" disabled="disabled" id="street" name="street" value="<?php echo $street ?>"><br><br>
-      <label for="house_nr">House Number:</label>
-      <input type="text" disabled="disabled" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>"><br><br>
-    </form>
+        <?php
+        if (isset($_SESSION['account_change'])){
+        echo '<div class="alert-success">' . htmlspecialchars($_SESSION['account_change']) . '</div>';
+        unset($_SESSION['account_change']);
+        }
+        ?>
+      <div class="account_container">
+          <h2 class="title-header">Account details</h2>
+          <div id="account_info_container" class="account_info_container">
+              <form>
+                  <div class="row justify-content-center">
+                      <label class="col" for="email">Email:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="email" name="email" value="<?php echo $email ?>">
+                  </div>
+                  <div class="row justify-content-center">
+                      <label class="col" for="name">Name:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="name" name="name" value="<?php echo $name ?>">
+                  </div>
+                  <div class="row justify-content-center">
+                      <label class="col" for="country">Country:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="country" name="country" value="<?php echo $country?>">
+                  </div>
+                  <div class="row justify-content-center">
+                      <label class="col" for="city">City:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="city" name="city" value="<?php echo $city ?>">
+                  </div>
+                  <div class="row justify-content-center">
+                      <label class="col" for="street">Street:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="street" name="street" value="<?php echo $street ?>">
+                  </div>
+                  <div class="row justify-content-center">
+                      <label class="col" for="house_nr">House Number:</label>
+                      <input class="col-auto" type="text" disabled="disabled" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>">
+                  </div>
+              </form>
+          </div>
+      </div>
     <!-- 
     <h1 class="user-account-information-title"> Email </h1>
     <p class="user-account-info"></p>
@@ -61,16 +77,18 @@ if ($address == null){
     <h2 class="user-account-information-title"> House number </h2>
     <p class="user-account-info"><?php echo htmlspecialchars($address['address_house_number']) ?></p>
     -->
-    <a href="account-change-details.php" class="user-account-change-button">
-      <div>
-        Change account details
+      <div class="account_buttons_container row">
+          <div class="col d-flex">
+              <a id="account_info_change" href="account-change-details.php" class="button_with_background">
+                  Change account details
+              </a>
+          </div>
+          <div class="col d-flex justify-content-end">
+              <a id="account_password_change" href="change-password.php" class="button_with_background">
+                  Change password
+              </a>
+          </div>
       </div>
-    </a>
-    <a href="change-password.php" class="user-account-change-button">
-      <div>
-        Change password
-      </div>
-    </a>
   </div>
   <div class="container-fluid">
   </div>

@@ -21,6 +21,10 @@ let checkout = document.getElementById("checkout_button");
 let send = document.getElementById("send_checkout");
 let thanks = document.getElementById("thank_you");
 let success = document.getElementById("successful_register");
+let account = document.getElementById("account_info_container");
+let accountInfoButton = document.getElementById("account_info_change");
+let accountPassButton = document.getElementById("account_password_change");
+let accountChanges =document.getElementById("account_change_yes");
 
 if (header !== null)
 {
@@ -71,6 +75,26 @@ if (success !== null)
 {
     success.style.backgroundImage = "url('../" + season + "')";
     success.style.backgroundSize = back_width + "px";
+}
+if (account !== null)
+{
+    account.style.backgroundImage = "url('" + season + "')";
+    account.style.backgroundSize = back_width + "px";
+}
+if (accountInfoButton !== null)
+{
+    accountInfoButton.style.backgroundImage = "url('" + season + "')";
+    accountInfoButton.style.backgroundSize = back_width + "px";
+}
+if (accountPassButton !== null)
+{
+    accountPassButton.style.backgroundImage = "url('" + season + "')";
+    accountPassButton.style.backgroundSize = back_width + "px";
+}
+if (accountChanges !== null)
+{
+    accountChanges.style.backgroundImage = "url('" + season + "')";
+    accountChanges.style.backgroundSize = back_width + "px";
 }
 
 function getSeason(date)

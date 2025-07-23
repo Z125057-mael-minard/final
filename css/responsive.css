@@ -166,6 +166,18 @@
     {
         font-size: 15px;
     }
+    /*
+    ACCOUNT
+     */
+    .account_buttons_container
+    {
+        display: grid;
+        justify-content: end;
+    }
+    .account_buttons_container div
+    {
+        margin-bottom: 20px;
+    }
 }
 @media only screen and (max-width: 400px) {
     .product_detail-add_to_cart

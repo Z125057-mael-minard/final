@@ -615,13 +615,83 @@ SUCCESSFUL REGISTER
 }
 
 /*
-ADMIN
+ACCOUNT
  */
+.account_container
+{
 
+}
+.account_info_container
+{
+    max-width: 500px;
+    display: block;
+    border-radius: 25px;
+    border: solid 5px white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    background-attachment: fixed;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+.account_info_container div
+{
+    margin-bottom: 15px;
+}
+.account_info_container div:last-of-type
+{
+    margin-bottom: 0;
+}
+.account_info_container div label
+{
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+.account_info_container div input
+{
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    border: none;
+    max-width: 250px;
+    background-color: white;
+}
+.account_info_container div input:disabled
+{
+    background-color: #dadada;
+}
+.account_buttons_container
+{
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.account_cancel_changes
+{
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.75);
+    color: black;
+    font-family: Roboto,sans-serif;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: 0.1s;
+}
+.account_cancel_changes:hover
+{
+    color: black;
+    box-shadow: 0 0 10px black;
+    transform: scale(105%);
+}
 
 .edited
 {
     background-color: #e1e1e1;
+}
+.title-header
+{
+    text-align: center;
+    margin-bottom: 20px;
 }
 p
 {

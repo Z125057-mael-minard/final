@@ -25,21 +25,42 @@ if ($address == null){
 <div class="container">
   <div class="container-fluid">
     <h2 class="title-header">Change account details</h2>
-    <form action="php_scripts/account-change-details.php" method="post">
-      <label for="email">Email:</label>
-      <input type="text" disabled="disabled" id="email" name="email" value="<?php echo htmlspecialchars($user['user_email']) ?>"><br><br>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" value="<?php echo $name ?>"><br><br>
-      <label for="country">Country:</label>
-      <input type="text" id="country" name="country" value="<?php echo $country ?>"><br><br>
-      <label for="city">City:</label>
-      <input type="text" id="city" name="city" value="<?php echo $city ?>"><br><br>
-      <label for="street">Street:</label>
-      <input type="text" id="street" name="street" value="<?php echo $street ?>"><br><br>
-      <label for="house_nr">House Number:</label>
-      <input type="text" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>"><br><br>
-      <!-- Submit button -->
-      <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Change</button>
-    </form>
+      <form action="php_scripts/account-change-details.php" method="post">
+          <div id="account_info_container" class="account_info_container">
+              <div  class="row justify-content-center">
+                  <label class="col" for="email">Email:</label>
+                  <input class="col-auto" type="text" disabled="disabled" id="email" name="email" value="<?php echo htmlspecialchars($user['user_email']) ?>">
+              </div>
+              <div  class="row justify-content-center">
+                  <label class="col" for="name">Name:</label>
+                  <input class="col-auto" type="text" id="name" name="name" value="<?php echo $name ?>">
+              </div>
+              <div  class="row justify-content-center">
+                  <label class="col" for="country">Country:</label>
+                  <input class="col-auto" type="text" id="country" name="country" value="<?php echo $country ?>">
+              </div>
+              <div  class="row justify-content-center">
+                  <label class="col" for="city">City:</label>
+                  <input class="col-auto" type="text" id="city" name="city" value="<?php echo $city ?>">
+              </div>
+              <div  class="row justify-content-center">
+                  <label class="col" for="street">Street:</label>
+                  <input class="col-auto" type="text" id="street" name="street" value="<?php echo $street ?>">
+              </div>
+              <div  class="row justify-content-center">
+                  <label class="col" for="house_nr">House Number:</label>
+                  <input class="col-auto" type="text" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>">
+              </div>
+          </div>
+          <div class="account_buttons_container row">
+              <!-- Submit button -->
+              <button id="account_change_yes" type="submit" data-mdb-button-init data-mdb-ripple-init class="col-auto d-flex button_with_background">Change</button>
+              <div class="col d-flex justify-content-end">
+                  <a href="account.php" class="account_cancel_changes">
+                      Cancel
+                  </a>
+              </div>
+          </div>
+      </form>
   </div>
 </div>
