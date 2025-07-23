@@ -52,7 +52,7 @@ if ($address == null){
                   <input class="col-auto" type="text" id="house_nr" name="house_nr" value="<?php echo $house_nr ?>">
               </div>
           </div>
-          <div class="account_buttons_container row">
+          <div class="account_changes_buttons_container row">
               <!-- Submit button -->
               <button id="account_change_yes" type="submit" data-mdb-button-init data-mdb-ripple-init class="col-auto d-flex button_with_background">Change</button>
               <div class="col d-flex justify-content-end">

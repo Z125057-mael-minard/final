@@ -4,16 +4,16 @@
     <form action="php_scripts/change_password.php" method="post">
         <div id="account_info_container" class="account_info_container">
             <!-- Password input -->
-            <div data-mdb-input-init class="form-outline mb-4">
+            <div data-mdb-input-init>
                 <input type="password" id="form-password-old" class="form-control" name="password-old" placeholder="Old Password"/>
             </div>
 
             <!-- Password input -->
-            <div data-mdb-input-init class="form-outline mb-4">
+            <div data-mdb-input-init>
                 <input type="password" id="form-password-new" class="form-control" name="password-new" placeholder="New Password"/>
             </div>
         </div>
-        <div class="account_buttons_container row">
+        <div class="account_changes_buttons_container row">
             <!-- Submit button -->
             <button id="account_change_yes" type="submit" data-mdb-button-init data-mdb-ripple-init class="col-auto button_with_background">Change</button>
             <div class="col d-flex justify-content-end">
