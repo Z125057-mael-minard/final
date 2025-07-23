@@ -62,7 +62,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 <?php 
                 $arr = $products;
                 usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
-                $arrivals = array_slice($arr, 0, 9);
+                $arrivals = array_slice($arr, 0, 5);
                 foreach($arrivals as $product):
                 ?>
                 <div class="product sliding-product col-12 col-sm-6 col-lg-3 col-xl-3">
@@ -94,6 +94,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 } else if ($month === 8 || $month === 9 || $month === 10) {
                 $season = 2;
                 }
+                $season = 1;
                 foreach($products as $product):
                 if ($product->product_season == $season):
                 ?>
