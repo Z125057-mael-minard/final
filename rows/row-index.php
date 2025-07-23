@@ -62,7 +62,7 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 <?php 
                 $arr = $products;
                 usort($arr, function($a, $b) {return $b->product_id <=> $a->product_id;}); // Sort in descending order
-                $arrivals = array_slice($arr, 0, 9);
+                $arrivals = array_slice($arr, 0, 5);
                 foreach($arrivals as $product):
                 ?>
                 <div class="product sliding-product col-12 col-sm-6 col-lg-3 col-xl-3">
@@ -80,7 +80,6 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                   </div>
                 </div>
                 <?php endforeach; ?>
-                <div class="product gap col-12 col-sm-6 col-lg-3 col-xl-3"></div>
                 <?php 
                 $season = 0;
                 $day = (int) date('d');
@@ -115,9 +114,9 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                 <?php endif; endforeach; ?>
               </div>
             </div>
-            <div class="nav right d-flex justify-content-center align-content-center" id="rightBtn">
+            <button class="nav right d-flex justify-content-center align-content-center" id="rightBtn">
                 <p>›</p>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -182,4 +181,4 @@ $categories = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
 </div>
   <script src="javascript/clear_filter.js"></script>
   <script src="javascript/edit_filteroptions.js"></script>
-  <script src="javascript/sliding-products-gpt.js"></script>
+  <script src="javascript/sliding-products.js"></script>

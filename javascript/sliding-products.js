@@ -1,66 +1,103 @@
-const sliding_items_containers = document.querySelectorAll('.sliding-items-container');
-const left_arrows = document.querySelectorAll('.sliding-arrow-left');
-const right_arrows = document.querySelectorAll('.sliding-arrow-right');
+const slider = document.getElementById("slider");
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+const seasonal_products = document.querySelectorAll(".seasonal-product");
 
-//let product_w = container.children[0].getBoundingClientRect().width;
+const slider_h = document.getElementById("slider-header");
 
-let product_indexes = [];
-for (let i=0; i<sliding_items_containers.length; i++) {
-  product_indexes.push(0)
-  check_arrows(left_arrows[i], right_arrows[i], product_indexes[i],
-    sliding_items_containers[i].children.length,
-    product_nb_per_page(sliding_items_containers[i]))
-}
+let productWidth = 0;
+let totalProducts = 0;
+let maxScroll = 0;
 
-let x = 0;
+function getSeason(date)
+{
+    const month = date.getMonth();
+    const day = date.getDate();
 
-for (let i =0; i < left_arrows.length; i++) {
-  left_arrows[i].addEventListener("click", () => {
-    let product_nb_per_pg = product_nb_per_page(sliding_items_containers[i]);
-    if (product_indexes[i] > 0) {
-      translate_products(sliding_items_containers[i], 1);
-      product_indexes[i] -= product_nb_per_pg;
-      check_arrows(left_arrows[i], right_arrows[i], product_indexes[i],
-        sliding_items_containers[i].children.length,
-        product_nb_per_pg)
-    }
-  });
-}
-for (let i =0; i < right_arrows.length; i++) {
-  right_arrows[i].addEventListener("click", () => { 
-    let product_nb_per_pg = product_nb_per_page(sliding_items_containers[i]);
-    let product_nb = sliding_items_containers[i].children.length;
-    if (product_indexes[i] + product_nb_per_pg < product_nb - 1) {
-      translate_products(sliding_items_containers[i], -1) 
-      product_indexes[i] += product_nb_per_pg;
-      check_arrows(left_arrows[i], right_arrows[i], product_indexes[i],
-        product_nb,
-        product_nb_per_pg)
-    }
-  });
-}
-
-function product_nb_per_page(container) {
-  let container_w = container.getBoundingClientRect().width;
-  let product_w = container.children[0].getBoundingClientRect().width;
-  return Math.floor(container_w/product_w);
-}
-
-function translate_products(container, dir) {
-  children = container.children;
-  translation = dir * (container.getBoundingClientRect().width - 7);
-  x += translation;
-  for (child of children) {
-    child.style.transform = `translate(${x}px, 0px)`;
+  if ((month === 11 && day >= 1) || month === 0 || month === 1) {
+    return 3;
+  } else if (month === 2 || month === 3 || month === 4) {
+    return 0;
+  } else if (month === 5 || month === 6 || month === 7) {
+    return 1;
+  } else if (month === 8 || month === 9 || month === 10) {
+    return 2;
   }
 }
 
-function check_arrows(left_arrow, right_arrow, product_index, product_number, product_nb_per_page) {
-  right_arrow.style.visibility = "visible";
-  left_arrow.style.visibility = "visible";
-  if (product_index + product_nb_per_page >= product_number - 1) {
-    right_arrow.style.visibility = "hidden";
-  } else if (product_index == 0) {
-    left_arrow.style.visibility = "hidden";
+function updateMetrics() {
+  const product = slider.querySelector(".product");
+  productWidth = product.offsetWidth + parseInt(getComputedStyle(product).marginLeft) + parseInt(getComputedStyle(product).marginRight);
+  totalProducts = slider.children.length;
+  maxScroll = productWidth * (totalProducts - Math.floor(slider.offsetWidth / productWidth));
+  updateButtons();
+}
+
+function slideBy(direction) {
+  const scrollLeft = slider.scrollLeft;
+  const next = Math.round(scrollLeft / productWidth) + direction;
+  const target = Math.min(Math.max(next, 0), totalProducts - 1);
+  slider.scrollTo({ left: target * productWidth, behavior: "smooth" });
+}
+
+function updateButtons() {
+  const scrollLeft = slider.scrollLeft;
+  leftBtn.disabled = scrollLeft <= 0;
+  rightBtn.disabled = scrollLeft >= maxScroll - 5; // small margin to account for rounding
+}
+
+function isVisible(el) {
+  const elRect = el.getBoundingClientRect();
+  const sliderRect = slider.getBoundingClientRect();
+
+  return (
+    elRect.right > sliderRect.left &&  // element's left side is before slider's right
+    elRect.left < sliderRect.right     // element's right side is after slider's left
+  );
+}
+
+function updateSection() {
+  let section_season = false;
+  for (el of seasonal_products) {
+    if (isVisible(el)) {
+      section_season = true;
+      break;
+    }
+  }
+  if (section_season) {
+    updateToSeasonals();
+  }
+  else {
+    updateToNewArrivals();
   }
 }
+
+function updateToNewArrivals() {
+  slider_h.textContent = "New arrivals";
+  slider_h.style.color = "#ffffff";
+}
+
+function updateToSeasonals() {
+  slider_h.textContent = "Seasonal products";
+  slider_h.style.color = "#ffffff";
+}
+
+leftBtn.addEventListener("click", () => slideBy(-1));
+rightBtn.addEventListener("click", () => slideBy(1));
+slider.addEventListener("scroll", () => {
+  window.requestAnimationFrame(updateButtons);
+  window.requestAnimationFrame(updateSection);
+});
+
+window.addEventListener("resize", () => {
+  updateMetrics();
+  updateButtons();
+  updateSection();
+});
+
+// Initial setup
+window.addEventListener("load", () => {
+  updateMetrics();
+  updateSection();
+});
+

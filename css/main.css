@@ -142,7 +142,7 @@ NEW ARRIVALS / SEASONALS
 }
 
 .nav {
-    height: 35px;
+    height: 50px;
     background: white;
     border: none;
     border-radius: 50%;
@@ -150,6 +150,7 @@ NEW ARRIVALS / SEASONALS
     font-size: 2em;
     padding: 0 10px;
     cursor: pointer;
+    
 }
 .nav:hover
 {
