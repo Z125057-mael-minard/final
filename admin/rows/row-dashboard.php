@@ -29,7 +29,7 @@ $products = $db->query($sql)->fetchAll(PDO::FETCH_OBJ);
                                         <a href="edit_product.php?product_id=<?php echo($product->product_id)?>">Edit</a>
                                     </div>
                                     <div class="col-auto align-content-center admin_product_container_remove">
-                                        <a class="admin_product_remove" href="">X</a>
+                                        <a class="admin_product_remove" href="scripts/delete_product.php?product_id=<?php echo $product->product_id?>">X</a>
                                     </div>
                                 </div>
                             </div>
